@@ -4,51 +4,269 @@
     <meta charset="UTF-8">
     <meta name = "viewport" content = "width = device-width, initial-scale = 1">
     <link rel="stylesheet" href="../sementic/out/semantic.min.css">
+    <link href="stylesheets/home.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel = "stylesheet" href = "stylesheets/style.css">
     <title>MoneyGust</title>
 </head>
-<body>
-<div class="ui red header fixed inverted menu">
-    <div class=" item">
-        MoneyGust
+<body class="pushable">
+<div class="ui large top fixed hidden menu secondary " id="fixedmenu">
+    <div class="ui container">
+        <a class="item"><img class="ui mini image" src="images/Logo.png"></a>
+        <a class="active item">Invest</a>
+        <a class="item">About us</a>
+        <a class="item">how to invest</a>
+        <a class="item">Get Funding</a>
+        <a class="item">
+            <div class="content">
+                More
+                <div class="ui inline dropdown">
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                        <div class="item"><i class="calendar alternate outline icon"></i>Events</div>
+                        <div class="item" ><i class="edit outline icon"></i>Blog</div>
+                        <div class="item"><i class="sort amount down icon"></i>FAQ</div>
+                        <div class="item"><i class="newspaper outline icon"></i>News</div>
+                        <div class="item"><i class="gavel icon"></i>Legal documents</div>
+                        <div class="item"><i class="eye slash outline icon"></i>LetsGiveback</div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <div class="right menu">
+            <div class="item">
+                <a class="ui button">Log in</a>
+            </div>
+            <div class="item">
+                <a class="ui primary button">Sign Up</a>
+            </div>
+        </div>
     </div>
+</div>
+<!-- Sidebar Menu
+-->
+<div class="ui vertical inverted sidebar menu">
+    <a class="active item">Invest</a>
+    <a class="item">About us</a>
+    <a class="item">How to invest</a>
+    <a class="item">Get Funding</a>
     <a class="item">
-        invest
+        <div class="content">
+            More
+            <div class="ui inline dropdown">
+                <i class="dropdown icon"></i>
+                <div class="menu">
+                    <div class="item"><i class="calendar alternate outline icon"></i>Events</div>
+                    <div class="item" ><i class="edit outline icon"></i>Blog</div>
+                    <div class="item"><i class="sort amount down icon"></i>FAQ</div>
+                    <div class="item"><i class="newspaper outline icon"></i>News</div>
+                    <div class="item"><i class="gavel icon"></i>Legal documents</div>
+                    <div class="item"><i class="eye slash outline icon"></i>LetsGiveback</div>
+                </div>
+            </div>
+        </div>
     </a>
-    <a class="item active">
-        About us
-    </a>
-    <a class="item">
-        How to invest
-    </a>
-    <a class="item">
-        Get Funding
-    </a>
-    <a class="item">
-        Events
-    </a>
-    <a class="item">
-        More
-        <i class="dropdown icon"></i>
-    </a>
-    <div class="right menu">
-        <div class="item">
-            <a class="link">
-                Sign in
-            </a>
-            &nbsp;or &nbsp;
-            <a class="link">
-                Sign up
-            </a>
+    <a class="item">Login</a>
+    <a class="item">Signup</a>
+</div>
+<!-- Page Contents
+-->
+<div class="pusher">
+    <div class="ui inverted masthead center aligned vertical segment" id="header">
+        <div class="ui container">
+            <div class="ui large secondary inverted pointing menu">
+                <a class="toc item">
+                    <i class="sidebar icon"></i>
+                </a>
+                <a class="active item">Invest</a>
+                <a class="item">About us</a>
+                <a class="item">How to invest</a>
+                <a class="item">Get Funding</a>
+                <a class="item">
+                    <div class="content">
+                        <div class="ui inline dropdown">
+                            More
+                            <i class="dropdown icon"></i>
+                            <div class="menu">
+                                <div class="item"><i class="calendar alternate outline icon"></i>Events</div>
+                                <div class="item" ><i class="edit outline icon"></i>Blog</div>
+                                <div class="item"><i class="sort amount down icon"></i>FAQ</div>
+                                <div class="item"><i class="newspaper outline icon"></i>News</div>
+                                <div class="item"><i class="gavel icon"></i>Legal documents</div>
+                                <div class="item"><i class="eye slash outline icon"></i>LetsGiveback</div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="right item">
+                    <a class="ui inverted button">Log in</a>
+                    &nbsp;
+                    <a class="ui inverted button">Sign Up</a>
+                </div>
+            </div>
+        </div>
+        <div class="ui text container">
+            <h1 class="ui inverted header">
+                MoneyGust
+            </h1>
+            <h2>
+                India's most trusted platform for Angel Investing & Startup Fundraising
+            </h2>
+        </div>
+        <div class="ui container">
+            <div class="ui stackable grid center aligned">
+                <div class="row">
+                    <div class="one wide column"></div>
+                    <div class="six wide column">
+                        <div class="ui card headcard ">
+                            <div class="content">
+                                <h4 class="ui sub header">Invest in India's most promising Startups</h4>
+                                <div class="ui small feed">
+                                    <div class="event">
+                                        <div class="content">
+                                            <div class="summary">
+                                                Diversify your investment portfolio with access to highly curated and personalised deal flow from India and beyond
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="extra content">
+                                <button class="ui blue button">I am an investor</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="two wide column"></div>
+                    <div class = "six wide column">
+                        <div class="ui card headcard">
+                            <div class="content">
+                                <h4 class="ui sub header">Get funding for your Startup from Top Investors</h4>
+                                <div class="ui small feed">
+                                    <div class="event">
+                                        <div class="content">
+                                            <div class="summary">
+                                                Discover and Connect with global strategic investors to raise funds for your Startup with ease
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="extra content">
+                                <button class="ui blue button">I am a Startup</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="one wide column"></div>
+                </div>
+            </div>
+        </div>
+
+<!--            <div class="ui huge primary button">
+                Get Started
+                <i class="right arrow icon"></i>
+            </div>-->
+    </div>
+    <div class="ui vertical stripe segment">
+        <div class="ui header horizontal divider container">
+            LET US TELL YOU WHAT WE DO
+        </div>
+        <div class="ui stackable center aligned grid container">
+            <div class="row">
+                <div class="four wide column">
+                    <img class="ui bordered rounded image" height="190" width="255" src="https://www.angelsden.com/assets/images/homePage/homepage-the-very-best-businesses.jpg">
+                    <h4>The very best businesses</h4>
+                    <p class="dopara">
+                        Only a few of the hundreds of businesses we talk to each month get chosen to pitch. They must have inspiring teams, scalable business models and valuations that make sense. Many come recommended by the network of accelerators, incubators and investors built up since 2007. We work with companies we would invest in (and we often do).
+                    </p>
+                </div>
+                <div class="four wide right floated column">
+                    <img class="ui bordered rounded image" height="190" width="255" src="https://www.angelsden.com/assets/images/homePage/homepage-investing-alongside-the-smart-money.jpg"/>
+                    <h4>Investing alongside the smart money</h4>
+                    <p class="dopara">
+                        What makes us different is finding an active “lead” investor for every deal and giving experienced business people the opportunity to really get involved. This active and committed involvement is as important to a company's success as their financial investment. There is no better mentor than one who has invested their own money.
+                    </p>
+                </div>
+                <div class="four wide right floated column">
+                    <img class="ui bordered rounded image" height="190" width="255" src="https://www.angelsden.com/assets/images/homePage/homepage-investing-online.jpg"/>
+                    <h4>Investing online</h4>
+                    <p class="dopara">
+                        What makes us unique is this winning blend of pre-screened businesses, lead investors and an online platform showing every document you need to make an investment. It’s the only way to keep our incredible track record. We believe in really getting to know our investors, so when you sign up, one of our team will give you a call to find out exactly how we can help.
+                    </p>
+                </div>
+                <div class="four wide right floated column">
+
+                    <div class="image"><img class="ui  bordered rounded image" height="190" width="255" src="https://www.angelsden.com/assets/images/homePage/homepage-why-it-all-matters.jpg"/></div>
+                    <h4>Why it all matters</h4>
+                    <p class="dopara">
+                        What makes us unique is this winning blend of pre-screened businesses, lead investors and an online platform showing every document you need to make an investment. It’s the only way to keep our incredible track record. We believe in really getting to know our investors, so when you sign up, one of our team will give you a call to find out exactly how we can help.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui vertical stripe quote segment">
+        <div class="ui equal width stackable internally celled grid">
+            <div class="center aligned row">
+                <div class="column">
+                    <h3>"What a Company"</h3>
+                    <p>That is what they all say about us</p>
+                </div>
+                <div class="column">
+                    <h3>"I shouldn't have gone with their competitor."</h3>
+                    <p>
+                        <img class="ui avatar image" src="https://unsplash.it/650">
+                        <b>Nan</b>
+                        Chief Fun Officer Acme Toys
+                        </img>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui vertical stripe segment">
+        <div class="ui text container">
+            <h3 class="ui header">Breaking The Grid, Grabs Your Attention</h3>
+            <p>Instead of focusing on content creation and hard work, we have learned how to master the art of doing nothing by providing massive amounts of whitespace and generic content that can seem massive, monolithic and worth your attention.</p>
+            <a class="ui large button">Read More</a>
+            <h4 class="ui horizontal header divider">
+                <a href="#">Case Studies</a>
+            </h4>
+            <h3 class="ui header">Did We Tell You About Our Bananas?</h3>
+            <p>Yes I know you probably disregarded the earlier boasts as non-sequitor filler content, but its really true. It took years of gene splicing and combinatory DNA research, but our bananas can really dance.</p>
+            <a class="ui large button">I'm Still Quite Interested</a>
+        </div>
+    </div>
+    <div class="ui inverted vertical footer segment">
+        <div class="ui container">
+            <div class="ui stackable inverted divided equal height stackable grid">
+                <div class="three wide column">
+                    <h4 class="ui inverted header">About</h4>
+                    <div class="ui inverted link list">
+                        <a class="item" href="#">Sitemap</a>
+                        <a class="item" href="#">Contact Us</a>
+                        <a class="item" href="#">Religious Ceremonies</a>
+                        <a class="item" href="#">Gazebo Plans</a>
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header">Services</h4>
+                    <div class="ui inverted link list">
+                        <a class="item" href="#">Banana Pre-Order</a>
+                        <a class="item" href="#">DNA FAQ</a>
+                        <a class="item" href="#">How To Access</a>
+                        <a class="item" href="#">Favorite X-Men</a>
+                    </div>
+                </div>
+                <div class="seven wide column">
+                    <h4 class="ui inverted header">Footer Header</h4>
+                    <p>Extra space for a call to action inside the footer that could help re-engage users.</p>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 </body>
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="../sementic/out/semantic.min.js"></script>
-<script>
-
-</script>
+<script src="javascripts/Home.js"></script>
 </html>
