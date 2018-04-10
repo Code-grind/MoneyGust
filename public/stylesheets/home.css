@@ -109,7 +109,7 @@
 }
 
 #header{
-    /*background-image: url("../images/Home Header.jpg");*/
+    /*background-image: url("../images/x.jpg");*/
     /*background-repeat: no-repeat,no-repeat;*/
     background:linear-gradient(0deg,rgba(0,100,0,0.3), rgba(0,100,0,0.3));
     -webkit-background-size: cover;
@@ -145,4 +145,9 @@
 
 .dopara{
     font-size: 0.87em !important;
+}
+
+.stripe-overwrite{
+    margin-top: 0.5em !important;
+    padding-top: 0.5em !important;
 }

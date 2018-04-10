@@ -22,3 +22,5 @@ $(document)
 $('.ui.dropdown')
     .dropdown()
 ;
+
+$('.masthead').css('min-height',$(window).height());
