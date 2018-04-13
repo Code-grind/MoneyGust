@@ -151,3 +151,27 @@
     margin-top: 0.5em !important;
     padding-top: 0.5em !important;
 }
+
+.image-wrapper{
+    width: 10em;
+}
+
+.glide__arrow{
+    border: none !important;
+    font-size: 3em !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+}
+.glide__arrow--left{
+    left: 1em !important;
+}
+.glide__arrow--right{
+    right: 1em !important;
+}
+
+#carousel-wrapper{
+    padding: 0 !important;
+}
+ul{
+    margin: 0;
+}

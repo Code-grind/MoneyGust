@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="../sementic/out/semantic.min.css">
     <link href="stylesheets/home.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../node_modules/@glidejs/glide/dist/css/glide.core.min.css">
+    <link rel="stylesheet" href="../node_modules/@glidejs/glide/dist/css/glide.theme.min.css">
     <link rel = "stylesheet" href = "stylesheets/style.css">
     <title>MoneyGust</title>
 </head>
@@ -43,8 +45,7 @@
         </div>
     </div>
 </div>
-<!-- Sidebar Menu
--->
+<!-- Sidebar Menu-->
 <div class="ui vertical inverted sidebar menu">
     <a class="active item">Invest</a>
     <a class="item">About us</a>
@@ -69,8 +70,7 @@
     <a class="item">Login</a>
     <a class="item">Signup</a>
 </div>
-<!-- Page Contents
--->
+<!-- Page Contents-->
 <div class="pusher">
     <div class="ui inverted masthead center aligned vertical segment" id="header">
         <div class="header-image-wrapper">
@@ -259,8 +259,58 @@
                     <p>
                         In addition to being a great community, MoneyGust is premium investment platform where high potential startups can start their round. The opportunities that MoneyGust publishes (and where it spends) are operations where a professional investor with experience and proven record of investment in startups has already confirmed his participation and invests his money.
                     </p>
-                    <div class="ten wide column"></div>
                 </div>
+                <div class="six wide column">
+                    <div class="image-wrapper">
+                        <!--<img src="images/stickies-2771786_1920.jpg">-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui vertical segment" id="carousel-wrapper">
+        <div class="glide">
+            <div class="glide__track" data-glide-el="track">
+                <ul class="glide__slides">
+                    <li class="glide__slide">
+                        <div class="ui link cards">
+                            <div class="card">
+                                <div class="image">
+                                    <img src="https://semantic-ui.com/images/avatar2/large/elyse.png">
+                                </div>
+                                <div class="content">
+                                    <div class="header">Matt Giampietro</div>
+                                    <div class="meta">
+                                        <a>Friends</a>
+                                    </div>
+                                    <div class="description">
+                                        “There is no better place to look for investors like MoneyGust. In LinkedIn you have them all, but how do you look for them? How do you know what they invest in?”
+                                    </div>
+                                </div>
+                                <div class="extra content">
+                                    <span class="right floated">
+                                        Joined in 2013
+                                    </span>
+                                    <span>
+                                         <i class="user icon"></i>
+                                    75 Friends
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="glide__slide"><img src="images/837093.jpg" class="ui image fluid"></li>
+                    <li class="glide__slide"><img src="images/Logo.png" class="ui image fluid"></li>
+                </ul>
+            </div>
+            <div class="glide__arrows" data-glide-el="controls">
+                <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><i class="arrow circle left icon"></i></button>
+                <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><i class="arrow circle right icon"></i></button>
+            </div>
+            <div class="glide__bullets" data-glide-el="controls[nav]">
+                <button class="glide__bullet" data-glide-dir="=0"></button>
+                <button class="glide__bullet" data-glide-dir="=1"></button>
+                <button class="glide__bullet" data-glide-dir="=2"></button>
             </div>
         </div>
     </div>
@@ -296,5 +346,6 @@
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="../sementic/out/semantic.min.js"></script>
+<script src="../node_modules/@glidejs/glide/dist/glide.js"></script>
 <script src="javascripts/Home.js"></script>
 </html>
