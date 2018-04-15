@@ -108,6 +108,9 @@
     background-color: white;
 }
 
+.ui.segment{
+    border: none !important;
+}
 #header{
     /*background-image: url("../images/x.jpg");*/
     /*background-repeat: no-repeat,no-repeat;*/
@@ -169,8 +172,13 @@
     right: 1em !important;
 }
 
+.testimonial{
+    margin: 0 auto !important;
+}
+
 #carousel-wrapper{
-    padding: 0 !important;
+    //padding: 0 !important;
+    background: white;
 }
 ul{
     margin: 0;
