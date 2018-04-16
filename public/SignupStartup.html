@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1">
+    <link rel="stylesheet" href="../sementic/out/semantic.min.css">
+    <link href="stylesheets/home.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel = "stylesheet" href = "stylesheets/style.css">
+    <title>MoneyGust</title>
+</head>
+<body>
+<div class="ui container">
+
+    <!-- STEP PROGRESS -->
+
+    <br>
+    <h1><center> Step 1 of 3 </center></h1>
+    <h2><center>Let's get started</center></h2>
+
+
+    <form class="ui form" id="asd">
+
+        <h3>Founder Information</h3>
+        <hr>
+
+        <div class="inline fields" id="FounderInfo">
+            <div class="seven wide required field">
+                <label>How many founders/co-founders do you have? </label>
+            </div>
+            <div class="four wide field">
+                <select required class="ui dropdown">
+
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+
+                </select>
+
+            </div>
+        </div>
+
+            <div class="inline fields">
+
+                <div class="seven wide required field">
+                    <label>Enter your Name</label>
+                </div>
+                <div class="four wide required field">
+                <input type="text" placeholder="Full Name" required >
+                </div>
+
+            </div>
+
+        <div class="inline fields">
+
+            <div class="seven wide required field">
+                <label>Enter your Email</label>
+            </div>
+            <div class="four wide required field">
+                <input type="email" placeholder="Email" required >
+            </div>
+
+        </div>
+
+        <div class="inline fields">
+
+            <div class="seven wide required field">
+                <label>Enter your LinkedIn URL</label>
+            </div>
+            <div class="four wide required field">
+                <input type="text" placeholder="LinkedIn URL" required >
+            </div>
+
+        </div>
+
+        <h3>Startup Information</h3>
+        <hr>
+
+        <div class="inline fields" id="StartupInfo">
+
+            <div class="seven wide required field">
+                <label>Enter your Startup Name</label>
+            </div>
+            <div class="four wide required field">
+                <input type="text" placeholder="" required >
+            </div>
+
+        </div>
+
+        <div class="inline fields">
+            <div class="seven wide required field">
+                <label>What is your current startup stage </label>
+            </div>
+            <div class="four wide field required">
+                <select required class="ui dropdown">
+                    <option value="">Select startup stage</option>
+                    <option value="1">Ideation</option>
+                    <option value="2">Proof of concept</option>
+                    <option value="3">Beta launch</option>
+                    <option value="4">Early revenues</option>
+                    <option value="5">Steady revenues</option>
+                </select>
+
+            </div>
+        </div>
+
+        <div class="inline fields" >
+            <div class="seven wide required field">
+                <label>Is your startup incorporated </label>
+            </div>
+            <div class="four wide field required">
+
+                <select  class="ui dropdown" required>
+                    <option value="">Select an option</option>
+                    <option value="1">Not incorporated</option>
+                    <option value="2">B-corp</option>
+                    <option value="3">C-corp</option>
+                    <option value="4">S-corp</option>
+                    <option value="5">LLC</option>
+                    <option value="5">others</option>
+                </select>
+
+            </div>
+        </div>
+
+        <div class="inline fields">
+
+            <div class="seven wide field">
+                <label>Enter your Startup Website address</label>
+            </div>
+            <div class="four wide required field">
+                <input type="text" placeholder="Website url">
+            </div>
+
+        </div>
+
+        <div class="inline fields">
+            <div class="seven wide required field">
+                <label>Your startup Sector </label>
+            </div>
+            <div class="four wide field required">
+                <div class="ui multiple selection dropdown">
+                    <input name="gender" type="hidden" value="">
+                    <i class="dropdown icon"></i>
+                    <div class="default text">Select relevant option(s)</div>
+                    <div class="menu">
+                        <div class="item" data-value="1">food</div>
+                        <div class="item" data-value="2">restaurants</div>
+                        <div class="item" data-value="3">travel</div>
+                        <div class="item" data-value="4">Ventures for good</div>
+                        <div class="item" data-value="5">agriculture</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="inline fields">
+            <div class="seven wide field required">
+                <label>Where is your startup located?</label>
+            </div>
+            <div class="four wide required field">
+                <div class="four wide field required">
+                    <select class="ui dropdown" aria-required="true">
+                        <option value="">Select a location</option>
+                        <option value="1">New Delhi</option>
+                        <option value="2">Mumbai</option>
+                        <option value="3">kolkata</option>
+                        <option value="4">Chennai</option>
+                        <option value="5">Banglore</option>
+                    </select>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="inline fields">
+            <div class="seven wide field required">
+                <label>Description About your startup</label>
+            </div>
+            <div class="six wide field">
+                <textarea rows="2" required></textarea>
+            </div>
+        </div>
+
+        <div class="inline fields">
+            <div class="seven wide required field">
+                <label>What is the amount you want to raise?</label>
+            </div>
+            <div class="four wide field">
+                <input type="hidden" name="gender">
+                <select class="ui dropdown">
+                    <option value="">Select an amount</option>
+                    <option value="1">Below 5 lakhs</option>
+                    <option value="2">Between 5 to 15 lakhs</option>
+                    <option value="3">Between 15 to 30 lakhs</option>
+                    <option value="4">Between 30 to 50 lakhs</option>
+                    <option value="5">Above 50 lakhs</option>
+
+                </select>
+
+            </div>
+        </div>
+
+        <h3>User Information</h3>
+        <hr>
+
+        <div class="inline fields" id="UserInfo">
+
+            <div class="seven wide field required">
+                <label>Choose your UserID</label>
+            </div>
+            <div class="four wide required field">
+                <input type="text" placeholder="unique UserID" required>
+            </div>
+
+        </div>
+
+        <div class="inline fields">
+
+            <div class="seven wide field required">
+                <label>Create a password</label>
+            </div>
+            <div class="four wide required field">
+                <input type="password" placeholder=" " required>
+            </div>
+
+        </div>
+
+        <div class="inline fields">
+
+            <div class="seven wide field required">
+                <label>Confirm your password</label>
+            </div>
+            <div class="four wide required field">
+                <input type="password" placeholder=" " required>
+            </div>
+
+        </div>
+
+        <div class="inline fields">
+
+
+            <div class="eight wide field">
+            </div>
+            <div class="six wide fields">
+                <button class="positive ui button"> Submit </button>
+            </div>
+
+        </div>
+
+
+
+
+    </form>
+
+    <button onclick="asd(1)">Hide</button>
+    <button onclick="asd(2)">Show</button>
+</div>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="../sementic/out/semantic.min.js"></script>
+<script src="javascripts/Home.js"></script>
+<script src="javascripts/signupstartup.js"></script>
+</html>
