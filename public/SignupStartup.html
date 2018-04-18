@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name = "viewport" content = "width = device-width, initial-scale = 1">
-    <link rel="stylesheet" href="../sementic/out/semantic.min.css">
+    <link rel="stylesheet" href="stylesheets/semantic.css">
     <link href="stylesheets/home.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel = "stylesheet" href = "stylesheets/style.css">
+    <!--<link rel = "stylesheet" href = "stylesheets/style.css">-->
     <title>MoneyGust</title>
 </head>
 <body>
@@ -15,87 +15,67 @@
     <!-- STEP PROGRESS -->
 
     <br>
-    <h1><center> Step 1 of 3 </center></h1>
-    <h2><center>Let's get started</center></h2>
-
-
-    <form class="ui form" id="asd">
-
+    <h1 class="ui header centered">Step 1 of 3 </h1>
+    <h2 class="ui header centered">Let's get started</h2>
+    <form class="ui form" id="asd" method="post" action="http://localhost:3000/StartupSignup">
         <h3>Founder Information</h3>
-        <hr>
-
+        <div class="ui divider"></div>
         <div class="inline fields" id="FounderInfo">
             <div class="seven wide required field">
                 <label>How many founders/co-founders do you have? </label>
             </div>
             <div class="four wide field">
-                <select required class="ui dropdown">
-
+                <select class="ui dropdown" name="NoCofounder">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
                     <option value="5">5</option>
                     <option value="6">6</option>
-
                 </select>
-
             </div>
         </div>
-
-            <div class="inline fields">
-
-                <div class="seven wide required field">
-                    <label>Enter your Name</label>
-                </div>
-                <div class="four wide required field">
-                <input type="text" placeholder="Full Name" required >
-                </div>
-
-            </div>
-
         <div class="inline fields">
-
+            <div class="seven wide required field">
+                <label>Enter your Name</label>
+            </div>
+            <div class="four wide required field">
+                <input type="text" placeholder="Full Name" name="FullName" >
+            </div>
+        </div>
+        <div class="inline fields">
             <div class="seven wide required field">
                 <label>Enter your Email</label>
             </div>
             <div class="four wide required field">
-                <input type="email" placeholder="Email" required >
+                <input type="email" placeholder="Email" name="Email">
             </div>
-
         </div>
-
         <div class="inline fields">
-
             <div class="seven wide required field">
                 <label>Enter your LinkedIn URL</label>
             </div>
             <div class="four wide required field">
-                <input type="text" placeholder="LinkedIn URL" required >
+                <input type="text" placeholder="LinkedIn URL" name="LinkedInUrl">
             </div>
-
         </div>
 
         <h3>Startup Information</h3>
-        <hr>
-
-        <div class="inline fields" id="StartupInfo">
-
+        <div class="ui divider"></div>
+        <div class="inline fields" >
             <div class="seven wide required field">
                 <label>Enter your Startup Name</label>
             </div>
             <div class="four wide required field">
-                <input type="text" placeholder="" required >
+                <input type="text" placeholder="Startup Name" name="CompanyName">
             </div>
-
         </div>
-
         <div class="inline fields">
             <div class="seven wide required field">
                 <label>What is your current startup stage </label>
             </div>
             <div class="four wide field required">
-                <select required class="ui dropdown">
+                <select class="ui dropdown" name="StartupStage">
                     <option value="">Select startup stage</option>
                     <option value="1">Ideation</option>
                     <option value="2">Proof of concept</option>
@@ -103,17 +83,14 @@
                     <option value="4">Early revenues</option>
                     <option value="5">Steady revenues</option>
                 </select>
-
             </div>
         </div>
-
         <div class="inline fields" >
             <div class="seven wide required field">
                 <label>Is your startup incorporated </label>
             </div>
             <div class="four wide field required">
-
-                <select  class="ui dropdown" required>
+                <select class="ui dropdown" name="StartupCorporated">
                     <option value="">Select an option</option>
                     <option value="1">Not incorporated</option>
                     <option value="2">B-corp</option>
@@ -122,19 +99,15 @@
                     <option value="5">LLC</option>
                     <option value="5">others</option>
                 </select>
-
             </div>
-        </div>
-
+        </div>cd
         <div class="inline fields">
-
             <div class="seven wide field">
                 <label>Enter your Startup Website address</label>
             </div>
             <div class="four wide required field">
-                <input type="text" placeholder="Website url">
+                <input type="text" placeholder="Website url" name="CompanyWebsite">
             </div>
-
         </div>
 
         <div class="inline fields">
@@ -143,7 +116,7 @@
             </div>
             <div class="four wide field required">
                 <div class="ui multiple selection dropdown">
-                    <input name="gender" type="hidden" value="">
+                    <input  type="hidden" value="" name="StartupFocusSector">
                     <i class="dropdown icon"></i>
                     <div class="default text">Select relevant option(s)</div>
                     <div class="menu">
@@ -163,7 +136,7 @@
             </div>
             <div class="four wide required field">
                 <div class="four wide field required">
-                    <select class="ui dropdown" aria-required="true">
+                    <select class="ui dropdown" aria-required="true" name="CompanyCity">
                         <option value="">Select a location</option>
                         <option value="1">New Delhi</option>
                         <option value="2">Mumbai</option>
@@ -180,25 +153,23 @@
             <div class="seven wide field required">
                 <label>Description About your startup</label>
             </div>
-            <div class="six wide field">
-                <textarea rows="2" required></textarea>
+            <div class="six wide field" >
+                <textarea rows="2" name="AboutCompany"></textarea>
             </div>
         </div>
 
         <div class="inline fields">
             <div class="seven wide required field">
-                <label>What is the amount you want to raise?</label>
+                <label >What is the amount you want to raise?</label>
             </div>
             <div class="four wide field">
-                <input type="hidden" name="gender">
-                <select class="ui dropdown">
+                <select class="ui dropdown" name="AmountToRaise">
                     <option value="">Select an amount</option>
                     <option value="1">Below 5 lakhs</option>
                     <option value="2">Between 5 to 15 lakhs</option>
                     <option value="3">Between 15 to 30 lakhs</option>
                     <option value="4">Between 30 to 50 lakhs</option>
                     <option value="5">Above 50 lakhs</option>
-
                 </select>
 
             </div>
@@ -208,61 +179,52 @@
         <hr>
 
         <div class="inline fields" id="UserInfo">
-
             <div class="seven wide field required">
                 <label>Choose your UserID</label>
             </div>
             <div class="four wide required field">
-                <input type="text" placeholder="unique UserID" required>
+                <input type="text" placeholder="unique UserID" name="UserID">
             </div>
-
         </div>
-
         <div class="inline fields">
-
             <div class="seven wide field required">
                 <label>Create a password</label>
             </div>
             <div class="four wide required field">
-                <input type="password" placeholder=" " required>
+                <input type="password" placeholder=" " name="Password">
             </div>
-
         </div>
-
         <div class="inline fields">
-
             <div class="seven wide field required">
                 <label>Confirm your password</label>
             </div>
             <div class="four wide required field">
-                <input type="password" placeholder=" " required>
+                <input type="password" placeholder=" " name="ConfirmPassword">
             </div>
-
         </div>
 
-        <div class="inline fields">
-
-
-            <div class="eight wide field">
-            </div>
-            <div class="six wide fields">
-                <button class="positive ui button"> Submit </button>
-            </div>
-
-        </div>
-
-
-
-
+        <!--<div class="inline fields">-->
+            <!--<div class="eight wide field">-->
+            <!--</div>-->
+            <!--<div class="six wide fields">-->
+                <!--<button class="positive ui button" type="submit"> Submit </button>-->
+            <!--</div>-->
+        <!--</div>-->
+        <button class="positive ui button"> Submit </button>
     </form>
 
-    <button onclick="asd(1)">Hide</button>
-    <button onclick="asd(2)">Show</button>
+    <!--<button onclick="asd(1)">Hide</button>-->
+    <!--<button onclick="asd(2)">Show</button>-->
 </div>
 
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="../sementic/out/semantic.min.js"></script>
-<script src="javascripts/Home.js"></script>
+<script src="javascripts/semantic.min.js"></script>
+<script>
+    $('.ui.dropdown')
+        .dropdown()
+    ;
+</script>
+<!--<script src="javascripts/Home.js"></script>-->
 <script src="javascripts/signupstartup.js"></script>
 </html>

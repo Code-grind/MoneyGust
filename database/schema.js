@@ -37,7 +37,7 @@ let startupSchema = new Schema({
     StartupStage: Number,
     StartupCorporated: Number,
     CompanyWebsite: String,
-    StartupFocusSector: [Number],
+    StartupFocusSector: String,
     CompanyCity: Number,
     AboutCompany: String,
     AmountToRaise: Number,
