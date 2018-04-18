@@ -14,7 +14,7 @@ let investorSchema = new Schema({
     InvestorGroupType: Number,
     RoleInCompany: Number,
     CompanyWebsite: String,
-    InvestmentFocusSector: [Number],
+    InvestmentFocusSector: String,
     CompanyCity: Number,
     AboutCompany: String,
     AmountToInvest: Number,
