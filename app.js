@@ -10,6 +10,8 @@ let session = require('express-session');
 let indexRouter = require('./routes/index');
 let usersRouter = require('./routes/users');
 let starupSignup = require('./routes/startupSignup');
+let investorSignup = require('./routes/investorSignup');
+
 
 let app = express();
 
@@ -33,6 +35,8 @@ app.use(express.static(path.join(__dirname,'sementic')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/StartupSignup',starupSignup);
+app.use('/InvestorSignup',investorSignup);
+
 
 app.use('/success', function(req, res){
     console.log("sent");
