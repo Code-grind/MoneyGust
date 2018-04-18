@@ -4,7 +4,7 @@ let router = express.Router();
 /* GET home page. */
 
 router.post('/',passport.authenticate('local.signup',{
-    successRedirect: '/success',
+    successRedirect: '/StartupDashboard.html',
     failureRedirect: '/failure'
 }));
 

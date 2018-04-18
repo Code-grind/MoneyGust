@@ -39,6 +39,11 @@ app.use('/StartupSignup',starupSignup);
 app.use('/InvestorSignup',investorSignup);
 app.use('/login',login);
 
+app.get('/logout', function(req, res){
+    req.logout();
+    res.redirect('/');
+});
+
 app.use('/success', function(req, res){
     console.log("sent");
     res.send(req.user);

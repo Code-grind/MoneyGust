@@ -69,7 +69,7 @@
 }
 
 .footer.segment {
-    padding: 5em 0em;
+    padding: 3em 0em;
 }
 
 .secondary.pointing.menu .toc.item {
@@ -85,7 +85,7 @@
         display: none !important;
     }
     .secondary.pointing.menu .item,
-    .secondary.pointing.menu .menu {
+    .secondary.pointing.menu .menu:not(.login) {
         display: none;
     }
     .secondary.pointing.menu .toc.item {

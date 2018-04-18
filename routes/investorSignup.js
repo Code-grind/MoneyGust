@@ -9,7 +9,7 @@ router.post('/',function (req,res) {
         Email: req.body.Email,
         LinkedInUrl: req.body.LinkedInUrl,
 
-        // Investor's Company Information
+        //Investor's Company Information
         CompanyName: req.body.CompanyName,
         InvestorGroupType: req.body.InvestorGroupType,
         RoleInCompany: req.body.RoleInCompany,
@@ -19,7 +19,7 @@ router.post('/',function (req,res) {
         AboutCompany: req.body.AboutCompany,
         AmountToInvest: req.body.AmountToInvest,
 
-        // User Information
+        //User Information
         UserID: req.body.UserID,
         Password: req.body.Password
     });
