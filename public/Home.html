@@ -37,7 +37,7 @@
         </a>
         <div class="right menu">
             <div class="item">
-                <a class="ui button">Log in</a>
+                <button class="ui button popuplogin">Log in</button>
             </div>
             <div class="item">
                 <a href="SignupDisplay.html" class="ui primary button">Sign Up</a>
@@ -67,8 +67,6 @@
             </div>
         </div>
     </a>
-    <a class="item">Login</a>
-    <a class="item">Signup</a>
 </div>
 <!-- Page Contents-->
 <div class="pusher">
@@ -102,7 +100,7 @@
                     </div>
                 </a>
                 <div class="right item">
-                    <a class="ui inverted button">Log in</a>
+                    <button class="ui inverted button popuplogin">Log in</button>
                     <a href="SignupDisplay.html" class="ui inverted button">Sign Up</a>
                 </div>
             </div>
@@ -397,6 +395,33 @@
                     <p>Extra space for a call to action inside the footer that could help re-engage users.</p>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="ui mini modal" style="display: block !important;">
+        <i class="close icon"></i>
+        <div class="ui header centered green">
+            Log In to Your Account
+        </div>
+        <div class="content">
+            <form class="ui form" method="post" action="http://localhost:3000/login" id="Login-form">
+                <div class="field">
+                    <label>Phone or E-mail Address</label>
+                    <input type="text" name="Email">
+                </div>
+                <div class="field">
+                    <label>Password</label>
+                    <input type="Password" name="Password">
+                </div>
+                <div class="field">
+                    <div class="ui checkbox">
+                        <input type="checkbox" checked="checked" name="rememberMe" tabindex="0" class="hidden">
+                        <label>Keep me signed in</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="actions">
+            <button class="ui green button" type="submit" form="Login-form">Send</>
         </div>
     </div>
 </div>

@@ -21,7 +21,7 @@ passport.use('local.signup',new LocalStrategy({
 },function (username,password,done) {
     console.log("pass " + username);
     console.log("pass " + password);
-    Schema.Users.findOne({'Email': username},function (err,user) {
+    Schema.startup.findOne({'Email': username},function (err,user) {
         if(err) {
             return done(err);
         }

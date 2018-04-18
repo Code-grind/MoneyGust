@@ -25,6 +25,11 @@ $(document)
                 on: 'hover'
             })
         ;
+        
+        $('.popuplogin').on('click',function (){
+            $('.mini.modal')
+                .modal('show')
+        })
     });
 
 new Glide('.glide',{
