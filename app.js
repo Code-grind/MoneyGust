@@ -11,12 +11,8 @@ require('./config/passport');
 let indexRouter = require('./routes/index');
 let usersRouter = require('./routes/users');
 let starupSignup = require('./routes/startupSignup');
-<<<<<<< HEAD
-let login = require('./routes/login');
-=======
 let investorSignup = require('./routes/investorSignup');
-
->>>>>>> 061a5db44b3237312a87ca69a29ede994781a272
+let login = require('./routes/login');
 
 let app = express();
 
@@ -40,8 +36,7 @@ app.use(express.static(path.join(__dirname,'sementic')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/StartupSignup',starupSignup);
-
-
+app.use('/InvestorSignup',investorSignup);
 app.use('/login',login);
 
 app.use('/success', function(req, res){
