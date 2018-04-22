@@ -3,7 +3,7 @@ let router = express.Router();
 let Schema = require('../database/schema');
 router.post('/',function (req,res){
     console.log(req.body);
-    let startupSchema = Schema.startup({
+    let startupSchema = Schema.user({
         // Founder Information
         NoCofounder: req.body.NoCofounder,
         FullName: req.body.FullName,
@@ -22,7 +22,8 @@ router.post('/',function (req,res){
 
         // User Information
         UserID: req.body.UserID,
-        Password: req.body.Password
+        Password: req.body.Password,
+        Type: "Startup"
     });
 
     startupSchema.save(function (err,data) {

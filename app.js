@@ -13,6 +13,7 @@ let usersRouter = require('./routes/users');
 let starupSignup = require('./routes/startupSignup');
 let investorSignup = require('./routes/investorSignup');
 let login = require('./routes/login');
+let investorLogin = require('./routes/InvestorLogin');
 
 let app = express();
 
@@ -38,6 +39,7 @@ app.use('/users', usersRouter);
 app.use('/StartupSignup',starupSignup);
 app.use('/InvestorSignup',investorSignup);
 app.use('/login',login);
+app.use('/investorlogin',investorLogin);
 
 app.get('/logout', function(req, res){
     req.logout();

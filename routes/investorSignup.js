@@ -21,7 +21,8 @@ router.post('/',function (req,res) {
 
         //User Information
         UserID: req.body.UserID,
-        Password: req.body.Password
+        Password: req.body.Password,
+        Type: "Investor"
     });
     investorSchema.save(function (err,data) {
         if(err) throw err;

@@ -3,7 +3,6 @@ const Schema = mongoose.Schema;
 
 let investorSchema = new Schema({
     // Investor Information
-
     NoActiveMember: Number,
     FullName: String,
     Email: String,
@@ -21,7 +20,8 @@ let investorSchema = new Schema({
 
     // User Information
     UserID: String,
-    Password: String
+    Password: String,
+    Type: String
 });
 
 let startupSchema = new Schema({
@@ -44,7 +44,8 @@ let startupSchema = new Schema({
 
     // User Information
     UserID: String,
-    Password: String
+    Password: String,
+    Type: String
 });
 
 let investor = mongoose.model('investorDetails',investorSchema);
