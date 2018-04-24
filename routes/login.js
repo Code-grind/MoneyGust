@@ -2,8 +2,7 @@ let express = require('express');
 let passport = require('passport');
 let router = express.Router();
 
-router.post('/',passport.authenticate('local.signup',{failureRedirect: '/failure'}),function (req,res) {
-    console.log(req.body);
+router.post('/',passport.authenticate(['local.Startup','local.Investor'],{failureRedirect: '/'}),function (req,res) {
     if(req.user.Type==='Startup'){
         return res.redirect('/StartupDashboard.html');
     }

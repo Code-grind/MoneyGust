@@ -1,5 +1,4 @@
 $(document).ready(function() {
-    // fix menu when passed
     $.ajax({
         type: 'GET',
         url: '/success'
@@ -14,7 +13,6 @@ $(document).ready(function() {
         console.log(status);
         loggedOut();
     });
-
     $('.masthead')
         .visibility({
             once: false,

@@ -12,8 +12,7 @@ let indexRouter = require('./routes/index');
 let usersRouter = require('./routes/users');
 let starupSignup = require('./routes/startupSignup');
 let investorSignup = require('./routes/investorSignup');
-let login = require('./routes/login');
-let investorLogin = require('./routes/InvestorLogin');
+let Login = require('./routes/login');
 
 let app = express();
 
@@ -38,8 +37,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/StartupSignup',starupSignup);
 app.use('/InvestorSignup',investorSignup);
-app.use('/login',login);
-app.use('/investorlogin',investorLogin);
+app.use('/login',Login);
 
 app.get('/logout', function(req, res){
     req.logout();
@@ -49,10 +47,6 @@ app.get('/logout', function(req, res){
 app.use('/success', function(req, res){
     console.log("sent");
     res.send(req.user);
-});
-
-app.get('/failure', function(req,res){
-    res.send('failed');
 });
 
 // catch 404 and forward to error handler
