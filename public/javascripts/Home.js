@@ -5,6 +5,7 @@ $(document).ready(function() {
     }).done(function (data) {
         console.log(data);
         if(data!==""){
+            addusername(data);
             loggedIn();
         }else{
             loggedOut();
@@ -58,4 +59,9 @@ function loggedIn() {
 function loggedOut() {
     $('.logout').show();
     $('.login').hide();
+}
+let username = $('#username');
+function addusername(data) {
+    let temp = `Hi ${data['UserID']}<i class="dropdown icon"></i>`;
+    username.html(temp);
 }
