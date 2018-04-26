@@ -47,7 +47,8 @@ function AppendList(data) {
                             
                         </div>
                     </div>
-                </div>`;
+                </div>
+                <div class="ui divider"></div>`;
     });
     //$("body").html("");
     listcoin.html(temp);

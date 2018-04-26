@@ -10,11 +10,11 @@
     <title>MoneyGust</title>
     <style type="text/css">
         .tempr {
-            background-image: url("http://comadre.co/wp-content/uploads/2018/03/simple-hd-backgrounds-dark-green-color-gradient-solid-bright-light-throughout-dark-green-color.jpg");
+            background-image: url("images/WhatsApp Image 2018-04-27 at 12.08.15 AM.jpeg");
             background-size: cover;
         }
         .tempr1{
-            background-image: url("https://wallpapercave.com/wp/G5uYe1h.jpg");
+            background-image: url("images/b.jpeg");
             background-size: cover;
         }
         .midhead{
@@ -27,7 +27,7 @@
 <div class="ui large top fixed menu secondary " id="fixedmenu">
     <div class="ui container">
         <a class="item">
-            <img class="ui mini image" src="images/logomoneygustX.png">
+            <img class="ui small image" src="images/logomoneygustX.png">
         </a>
         <a class="active item">Invest</a>
         <a class="item">About us</a>
@@ -51,7 +51,7 @@
         </a>
         <div class="right menu">
             <div class="item">
-                <a class="ui inverted secondary button">Log in</a>
+                <a class="ui inverted secondary popuplogin button">Log in</a>
             </div>
         </div>
     </div>
@@ -88,7 +88,7 @@
         </div>
     </div>
 </div>
-    <div class="ui inverted vertical footer segment ">
+<div class="ui inverted vertical footer segment ">
         <div class="ui container">
             <div class="ui stackable inverted divided equal height stackable grid">
                 <div class="three wide column">
@@ -116,6 +116,33 @@
             </div>
         </div>
     </div>
+<div class="ui mini modal hidden" style="display: block !important;">
+    <i class="close icon"></i>
+    <div class="ui header centered green">
+        Log In to Your Account
+    </div>
+    <div class="content">
+        <form class="ui form" method="post" id="Login-form" action="/login">
+            <div class="field">
+                <label for="Emailfield">Phone or E-mail Address</label>
+                <input type="text" name="Email" id="Emailfield">
+            </div>
+            <div class="field">
+                <label for="passwordField">Password</label>
+                <input type="Password" name="Password" id="passwordField">
+            </div>
+            <div class="field">
+                <div class="ui checkbox">
+                    <input type="checkbox" checked="checked" name="rememberMe" tabindex="0" class="hidden" id="rememberMe">
+                    <label for="rememberMe">Keep me signed in</label>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="actions">
+        <button class="ui green button" id="submit" form="Login-form">Send</button>
+    </div>
+</div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="javascripts/semantic.min.js"></script>

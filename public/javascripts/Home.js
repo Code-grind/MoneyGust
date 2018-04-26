@@ -1,10 +1,15 @@
 $(document).ready(function() {
+    $('.ui.dropdown')
+        .dropdown()
+    ;
+
     $.ajax({
         type: 'GET',
         url: '/success'
     }).done(function (data) {
         console.log(data);
         if(data!==""){
+            addDashboard(data);
             addusername(data);
             loggedIn();
         }else{
@@ -29,9 +34,7 @@ $(document).ready(function() {
     $('.ui.sidebar')
         .sidebar('attach events', '.toc.item');
 
-    $('.ui.dropdown')
-        .dropdown()
-    ;
+
     $('.ui.dimmer')
         .dimmer({
             on: 'hover'
@@ -60,8 +63,25 @@ function loggedOut() {
     $('.logout').show();
     $('.login').hide();
 }
-let username = $('#username');
+let username = $('.username');
 function addusername(data) {
     let temp = `Hi ${data['UserID']}<i class="dropdown icon"></i>`;
     username.html(temp);
+}
+let dashboard = $('.abcde');
+function addDashboard(data) {
+    let temp = '';
+    if(data['Type']==='Investor'){
+        temp = `<a class="item" href="InvestorDashboard.html">Dashboard</a>
+                <a class="item">History</a>
+                <a class="item">Settings</a>
+                <a class="item" href="/logout">Signed Out</a>`
+    }
+    else {
+        temp = `<a class="item" href="StartupDashboard.html">Dashboard</a>
+                <a class="item">History</a>
+                <a class="item">Settings</a>
+                <a class="item" href="/logout">Signed Out</a>`
+    }
+    dashboard.html(temp);
 }

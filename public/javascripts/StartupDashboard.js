@@ -26,34 +26,6 @@ $(document).ready(function() {
             console.log(status);
         });
     });
-});
-
-function AppendList(data) {
-    let temp = "";
-    $.each(data, function (index, value) {
-        temp += `<div class="item">
-                    <div class="image">
-                        <img src="https://semantic-ui.com/images/avatar2/large/kristy.png">
-                    </div>
-                    <div class="content">
-                        <a class="header">${value['CompanyName']}</a>
-                        <div class="meta">
-                            <span class="cinema">${value['Email']}</span>
-                        </div>
-                        <div class="description">
-                            <p>${value['AboutCompany']}</p>
-                        </div>
-                        <div class="extra">
-                        
-                            <div class="ui label">Amount Investor can fund (dynamic)</div>
-                        </div>
-                    </div>
-                </div>`;
-    });
-    //$("body").html("");
-    listcoin.html(temp);
-}
-$(document).ready(function() {
 
     $('.masthead')
         .visibility({
@@ -80,9 +52,34 @@ $(document).ready(function() {
     ;
     $('.mini.modal')
         .modal('attach events','.popuplogin','show');
-
-
 });
+
+function AppendList(data) {
+    let temp = "";
+    $.each(data, function (index, value) {
+        temp += `<div class="item">
+                    <div class="image">
+                        <img src="https://semantic-ui.com/images/avatar2/large/kristy.png">
+                    </div>
+                    <div class="content">
+                        <a class="header">${value['CompanyName']}</a>
+                        <div class="meta">
+                            <span class="cinema">${value['Email']}</span>
+                        </div>
+                        <div class="description">
+                            <p>${value['AboutCompany']}</p>
+                        </div>
+                        <div class="extra">
+                        
+                            <div class="ui label">Amount Investor can fund (dynamic)</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui divider"></div>`;
+    });
+    //$("body").html("");
+    listcoin.html(temp);
+}
 
 function loggedIn() {
     $('.logout').hide();

@@ -4,54 +4,45 @@
     <meta charset="UTF-8">
     <meta name = "viewport" content = "width = device-width, initial-scale = 1">
     <link rel="stylesheet" href="stylesheets/semantic.css">
-    <link href="stylesheets/home.css" rel="stylesheet" type="text/css">
+    <!--<link href="stylesheets/home.css" rel="stylesheet" type="text/css">-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--<link rel = "stylesheet" href = "stylesheets/home.css">-->
+    <link rel = "stylesheet" href = "stylesheets/style.css">
     <title>MoneyGust</title>
+
 </head>
 <body>
-
-<div class="ui inverted masthead center aligned vertical segment" id="header">
-    <div class="header-image-wrapper">
-        <!--<img src="images/Home%20Header.jpg">-->
-    </div>
+<div class="ui large top fixed hidden menu secondary " id="fixedmenu">
     <div class="ui container">
-        <div class="ui large secondary inverted pointing menu">
-            <a class="toc item">
-                <i class="sidebar icon"></i>
-            </a>
-            <a class="active item">Invest</a>
-            <a class="item" href="TempEventDisplay.html">Events</a>
-
-            <div class="right item">
-                <button class="ui inverted button popuplogin logout">Log in</button>
-                <a hidden href="SignupDisplay.html" class="ui inverted button logout">Sign Up</a>
-
-            </div>
+        <a class="item" href="/"><img class="ui small image" src="images/logomoneygustX.png"></a>
+        <a class="active item" href="/">Home</a>
+        <a class="item" href="TempEventDisplay.html">Events</a>
+        <div class="right menu">
             <div class="ui dropdown item login">
                 <div class="text">
                     <img class="ui avatar image" src="https://semantic-ui.com/images/avatar2/large/kristy.png">
-                    <span id="username"><i class="dropdown icon"></i></span>
+                    <span id="username"><i class="dropdown icon"></i> </span>
                 </div>
                 <div class="menu">
                     <a class="item" href="StartupDashboard.html">Dashboard</a>
-                    <a class="item">Notifications</a>
+                    <a class="item">History</a>
                     <a class="item">Settings</a>
-                    <a class="item" href="/logout">Sign Out</a>
+                    <a class="item" href="/logout">Signed Out</a>
                 </div>
             </div>
         </div>
     </div>
-    <br>
-    <h1>Startup List</h1>
-    <br>
-    <div class="ui divided items" id="listContainer">
-    </div>
 </div>
-
+<h1>Startup List</h1>
+<div class="ui divider"></div>
+<div class="ui divided items" id="listContainer">
+</div>
+</div>
 </body>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="javascripts/semantic.min.js"></script>
 <script src="javascripts/InvestorDashboard.js"></script>
+<!--<script src="javascripts/Home.js"></script>-->
 
 </html>
