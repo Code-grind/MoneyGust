@@ -2,9 +2,56 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1">
+    <link rel="stylesheet" href="stylesheets/semantic.css">
+    <link href="stylesheets/home.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--<link rel = "stylesheet" href = "stylesheets/home.css">-->
+    <title>MoneyGust</title>
 </head>
 <body>
 
+<div class="ui inverted masthead center aligned vertical segment" id="header">
+    <div class="header-image-wrapper">
+        <!--<img src="images/Home%20Header.jpg">-->
+    </div>
+    <div class="ui container">
+        <div class="ui large secondary inverted pointing menu">
+            <a class="toc item">
+                <i class="sidebar icon"></i>
+            </a>
+            <a class="active item">Invest</a>
+            <a class="item" href="TempEventDisplay.html">Events</a>
+
+            <div class="right item">
+                <button class="ui inverted button popuplogin logout">Log in</button>
+                <a hidden href="SignupDisplay.html" class="ui inverted button logout">Sign Up</a>
+
+            </div>
+            <div class="ui dropdown item login">
+                <div class="text">
+                    <img class="ui avatar image" src="https://semantic-ui.com/images/avatar2/large/kristy.png">
+                    <span id="username"><i class="dropdown icon"></i></span>
+                </div>
+                <div class="menu">
+                    <a class="item" href="StartupDashboard.html">Dashboard</a>
+                    <a class="item">Notifications</a>
+                    <a class="item">Settings</a>
+                    <a class="item" href="/logout">Sign Out</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <h1>Startup List</h1>
+    <br>
+    <div class="ui divided items" id="listContainer">
+    </div>
+</div>
+
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="javascripts/semantic.min.js"></script>
+<script src="javascripts/InvestorDashboard.js"></script>
+
 </html>

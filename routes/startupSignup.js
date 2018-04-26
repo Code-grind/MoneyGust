@@ -3,7 +3,7 @@ let router = express.Router();
 let Schema = require('../database/schema');
 router.post('/',function (req,res){
     console.log(req.body);
-    let startupSchema = Schema.user({
+    let startupSchema = Schema.startup({
         // Founder Information
         NoCofounder: req.body.NoCofounder,
         FullName: req.body.FullName,

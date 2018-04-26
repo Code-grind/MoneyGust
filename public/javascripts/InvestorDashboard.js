@@ -17,7 +17,7 @@ $(document).ready(function() {
     });
     $(function () {
         $.ajax({
-            url: "http://localhost:3000/investorList",
+            url: "http://localhost:3000/startupList",
             type: "GET",
         }).done(function (json) {
             console.log(json);
@@ -44,8 +44,7 @@ function AppendList(data) {
                             <p>${value['AboutCompany']}</p>
                         </div>
                         <div class="extra">
-                        
-                            <div class="ui label">Amount Investor can fund (dynamic)</div>
+                            
                         </div>
                     </div>
                 </div>`;
