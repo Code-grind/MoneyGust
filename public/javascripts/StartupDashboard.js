@@ -74,8 +74,7 @@ function AppendList(data) {
                             <div class="ui label">Amount Investor can fund (dynamic)</div>
                         </div>
                     </div>
-                </div>
-                <div class="ui divider"></div>`;
+                </div>`;
     });
     //$("body").html("");
     listcoin.html(temp);

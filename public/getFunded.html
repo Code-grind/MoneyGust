@@ -6,24 +6,24 @@
     <link rel="stylesheet" href="stylesheets/semantic.css">
     <link href="stylesheets/home.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="stylesheets/glide.core.min.css">
-    <link rel="stylesheet" href="stylesheets/glide.theme.min.css">
-    <link rel = "stylesheet" href = "stylesheets/style.css">
+    <!--<link rel="stylesheet" href="stylesheets/glide.core.min.css">-->
+    <!--<link rel="stylesheet" href="stylesheets/glide.theme.min.css">-->
+    <!--<link rel = "stylesheet" href = "stylesheets/style.css">-->
     <title>MoneyGust</title>
 </head>
 <body>
 
 <div class="ui large top fixed hidden menu secondary " id="fixedmenu">
     <div class="ui container">
-        <a class="item" href="#"><img class="ui small image" src="images/logomoneygustX.png"></a>
-        <a class="active item">Invest</a>
+        <a class="item" href="/"><img class="ui small image" src="images/logomoneygustX.png"></a>
+        <a class="item">Invest</a>
         <a class="item">About us</a>
         <a class="item">how to invest</a>
-        <a class="item">Get Funding</a>
+        <a class="active item">Get Funding</a>
         <a class="item">
             <div class="content">
-                More
                 <div class="ui inline dropdown">
+                    More
                     <i class="dropdown icon"></i>
                     <div class="menu">
                         <div class="item" ><i class="calendar alternate outline icon"></i>Events</div>
@@ -150,7 +150,7 @@
                                 </div>
                             </div>
                             <div class="extra content">
-                                <button class="ui blue button" >Signup as startup</button>
+                                <a class="ui blue button" href="SignupStartup.html">Signup as startup</a>
                             </div>
                         </div>
                     </div>
@@ -161,8 +161,6 @@
             </div>
         </div>
     </div>
-
-
     <div class="ui vertical stripe stripe-overwrite white-cover segment">
         <div class="ui header horizontal divider container">
           Discover and connect with global angel investors
@@ -201,8 +199,7 @@
             </div>
         </div>
     </div>
-
-    <div class="ui vertical stripe stripe-overwrite white-cover segment">
+    <div class="ui vertical stripe  white-cover segment" style="padding-top: 1px">
         <div class="ui header horizontal divider container">
             OUR INVESTMENT CRITERIA
         </div>
@@ -245,14 +242,69 @@
                 </div>
             </div>
         </div>
+    </div >
+    <div class="ui inverted vertical footer segment">
+        <div class="ui container">
+            <div class="ui stackable inverted divided equal height stackable grid">
+                <div class="three wide column">
+                    <h4 class="ui inverted header">About</h4>
+                    <div class="ui inverted link list">
+                        <a class="item" href="#">Sitemap</a>
+                        <a class="item" href="#">Contact Us</a>
+                        <a class="item" href="#">Religious Ceremonies</a>
+                        <a class="item" href="#">Gazebo Plans</a>
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header">Services</h4>
+                    <div class="ui inverted link list">
+                        <a class="item" href="#">Banana Pre-Order</a>
+                        <a class="item" href="#">DNA FAQ</a>
+                        <a class="item" href="#">How To Access</a>
+                        <a class="item" href="#">Favorite X-Men</a>
+                    </div>
+                </div>
+                <div class="seven wide column">
+                    <h4 class="ui inverted header">Footer Header</h4>
+                    <p>Extra space for a call to action inside the footer that could help re-engage users.</p>
+                    <div class="ui circular icon google plus button">
+                        <i class="google plus icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-
-
-
+    <div class="ui mini modal hidden" style="display: block !important;">
+        <i class="close icon"></i>
+        <div class="ui header centered green">
+            Log In to Your Account
+        </div>
+        <div class="content">
+            <form class="ui form" method="post" id="Login-form" action="/login">
+                <div class="field">
+                    <label for="Emailfield">Phone or E-mail Address</label>
+                    <input type="text" name="Email" id="Emailfield">
+                </div>
+                <div class="field">
+                    <label for="passwordField">Password</label>
+                    <input type="Password" name="Password" id="passwordField">
+                </div>
+                <div class="field">
+                    <div class="ui checkbox">
+                        <input type="checkbox" checked="checked" name="rememberMe" tabindex="0" class="hidden" id="rememberMe">
+                        <label for="rememberMe">Keep me signed in</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="actions">
+            <button class="ui green button" id="submit" form="Login-form">Send</button>
+        </div>
+    </div>
+</div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="javascripts/semantic.min.js"></script>
-<script src="javascripts/glide.min.js"></script>
+<!--<script src="javascripts/glide.min.js"></script>-->
 <script src="javascripts/Home.js"></script>
 </html>

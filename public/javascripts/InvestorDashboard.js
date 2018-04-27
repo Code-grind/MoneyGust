@@ -26,6 +26,10 @@ $(document).ready(function() {
             console.log(status);
         });
     });
+
+    $('.ui.labeled.icon.sidebar')
+        .sidebar('show')
+    ;
 });
 
 function AppendList(data) {
@@ -47,8 +51,7 @@ function AppendList(data) {
                             
                         </div>
                     </div>
-                </div>
-                <div class="ui divider"></div>`;
+                </div>`;
     });
     //$("body").html("");
     listcoin.html(temp);
@@ -97,3 +100,4 @@ function addusername(data) {
     let temp = `Hi ${data['UserID']}<i class="dropdown icon"></i>`;
     username.html(temp);
 }
+

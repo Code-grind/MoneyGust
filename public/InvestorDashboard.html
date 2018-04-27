@@ -12,7 +12,7 @@
 
 </head>
 <body>
-<div class="ui large top fixed hidden menu secondary " id="fixedmenu">
+<div class="ui large top fixed hidden menu secondary" id="fixedmenu">
     <div class="ui container">
         <a class="item" href="/"><img class="ui small image" src="images/logomoneygustX.png"></a>
         <a class="active item" href="/">Home</a>
@@ -33,11 +33,32 @@
         </div>
     </div>
 </div>
-<h1>Startup List</h1>
-<div class="ui divider"></div>
-<div class="ui divided items" id="listContainer">
+<div class="ui grid">
+    <div class="four wide column">
+        <div class="ui vertical fluid tabular menu">
+            <a class="active item">
+                Suggested Startup
+            </a>
+            <a class="item">
+                Pics
+            </a>
+            <a class="item">
+                Companies
+            </a>
+            <a class="item">
+                Links
+            </a>
+        </div>
+    </div>
+    <div class="twelve wide stretched column">
+        <div class="ui segment">
+            <h1>Startup List</h1>
+            <div class="ui divider"></div>
+            <div class="ui divided items" id="listContainer"></div>
+        </div>
+    </div>
 </div>
-</div>
+
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
