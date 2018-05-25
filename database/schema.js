@@ -45,13 +45,22 @@ let startupSchema = new Schema({
     // User Information
     UserID: String,
     Password: String,
-    Type: String
+    Type: String,
+    //Notification
+    Notification: [{type: Schema.Types.ObjectId, ref: 'notificationSchema'}]
+});
+
+let notificationSchema = new Schema({
+    RecevID: {type: Schema.Types.ObjectId, ref: 'startupSchema'},
+    Type: String,
+    Messages: String
 });
 
 let investor = mongoose.model('investorDetails',investorSchema);
 let startup = mongoose.model('startupDetails',startupSchema);
-
+let notif = mongoose.model('Notification',notificationSchema);
 module.exports = {
     investor,
-    startup
+    startup,
+    notif
 };

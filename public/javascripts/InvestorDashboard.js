@@ -48,7 +48,7 @@ function AppendList(data) {
                             <p>${value['AboutCompany']}</p>
                         </div>
                         <div class="extra">
-                            
+                            <button onclick="approach()" class="ui button secondary" id="Approach${index}">Approach</button>
                         </div>
                     </div>
                 </div>`;
@@ -101,3 +101,12 @@ function addusername(data) {
     username.html(temp);
 }
 
+function approach() {
+    $.ajax({
+        type: 'GET',
+        url: '/notification'
+    }).done(function (data) {
+    }).fail(function (xhr,status) {
+        console.log(status);
+    });
+}

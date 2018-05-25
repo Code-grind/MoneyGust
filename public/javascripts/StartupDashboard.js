@@ -70,7 +70,7 @@ function AppendList(data) {
                             <p>${value['AboutCompany']}</p>
                         </div>
                         <div class="extra">
-                        
+                            <button onclick="approach()" class="ui button secondary" id="Approach${index}">Approach</button>
                             <div class="ui label">Amount Investor can fund (dynamic)</div>
                         </div>
                     </div>
@@ -92,4 +92,14 @@ let username = $('#username');
 function addusername(data) {
     let temp = `Hi ${data['UserID']}<i class="dropdown icon"></i>`;
     username.html(temp);
+}
+
+function approach() {
+    $.ajax({
+        type: 'GET',
+        url: '/notification'
+    }).done(function (data) {
+    }).fail(function (xhr,status) {
+        console.log(status);
+    });
 }

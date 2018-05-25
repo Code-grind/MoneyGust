@@ -15,6 +15,7 @@ let investorSignup = require('./routes/investorSignup');
 let Login = require('./routes/login');
 let investorList = require('./routes/investorlist');
 let startupList = require('./routes/startuplist');
+let notifications = require('./routes/notification');
 
 let app = express();
 
@@ -42,6 +43,7 @@ app.use('/InvestorSignup',investorSignup);
 app.use('/login',Login);
 app.use('/investorList',investorList);
 app.use('/startupList',startupList);
+app.use('/notification',notifications);
 
 app.get('/logout', function(req, res){
     req.logout();
