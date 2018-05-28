@@ -23,7 +23,9 @@ router.post('/',function (req,res){
         // User Information
         UserID: req.body.UserID,
         Password: req.body.Password,
-        Type: "Startup"
+        Type: "Startup",
+        //Notification
+        Notification: []
     });
 
     startupSchema.save(function (err,data) {

@@ -1,0 +1,77 @@
+doctype html
+html
+    head
+        meta(charset="UTF-8", name="viewport", content = "width = device-width, initial-scale = 1")
+        link(rel='stylesheet', href="/stylesheets/semantic.css")
+        link(rel='stylesheet', href="https://fonts.googleapis.com/icon?family=Material+Icons")
+        //link(rel=stylesheet, href = "stylesheets/home.css")
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        title=title
+    body
+        div.ui.large.top.fixed.hidden.menu.secondary#fixedmenu
+            div.ui.container
+                a(class="item", href="#")
+                    img(class="ui small image", src="/images/logomoneygustX.png")
+                a(class="item", href="/") Home
+                a(class="item", href="TempEventDisplay.html") Events
+                div.right.menu
+                    div.ui.dropdown.item.login
+                        div.text
+                            img.ui.avatar.image(src="https://semantic-ui.com/images/avatar2/large/kristy.png")
+                            span#username
+                                i.dropdown.icon
+                        div.menu
+                            a.item(href="StartupDashboard.html") Dashboard
+                            a.item History
+                            a.item Settings
+                            a.item(href="/logout") Signed Out
+        div.ui.grid
+            div.four.wide.column
+                div.ui.vertical.fluid.tabular.menu
+                    - let option = choice
+                    - let message = AllMessages
+                    case option
+                        when 'Suggested Investor'
+                            a.active.item(href='/StartupDashboard') Suggested Investor
+                            a.item(href='/StartupDashboard/Notification') Notifications
+                                div.ui.teal.left.pointing.label=message.length
+                            a.item Pics
+                            a.item Companies
+                            a.item Links
+                        when 'Notifications'
+                            a.item(href='/StartupDashboard') Suggested Investor
+                            a.active.item(href='/StartupDashboard/Notification') Notifications
+                                div.ui.teal.left.pointing.label=message.length
+                                //div.ui.label 51
+                            a.item Pics
+                            a.item Companies
+                            a.item Links
+            div.twelve.wide.stretched.column
+                case option
+                    when 'Suggested Investor'
+                        div.ui.segment
+                            h1 Investor List
+                            div.ui.divider
+                            div.ui.divided.items#listContainer
+                    when 'Notifications'
+                        div.ui.segment
+                            div.ui.divided.items
+                                div.item
+                                    div.content
+                                        div.ui.vertical.menu.fluid
+                                            each n,i in message
+                                                    a.item
+                                                        h4.ui.header=message[i].Sender
+                                                        p=message[i].Messages
+                                            else
+                                                div.container
+                                                    h2.ui.center.aligned.icon.header
+                                                        i.circular.users.icon
+                                                        div.content No new notifications.
+                                                            div.sub.header you’ll see updates here for interested investor in watched repositories.
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+    script(src="/javascripts/semantic.min.js")
+    script(src="/javascripts/StartupDashboard.js")
+    <!--script(src="javascripts/Home.js")-->
+
+

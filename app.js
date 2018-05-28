@@ -16,6 +16,7 @@ let Login = require('./routes/login');
 let investorList = require('./routes/investorlist');
 let startupList = require('./routes/startuplist');
 let notifications = require('./routes/notification');
+let StartupDashboard = require('./routes/StartupDashboard');
 
 let app = express();
 
@@ -35,6 +36,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(path.join(__dirname,'public')));
 app.use(express.static(path.join(__dirname,'sementic')));
+if (app.get('env') === 'development') {
+    app.locals.pretty = true;
+}
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
@@ -43,6 +47,7 @@ app.use('/InvestorSignup',investorSignup);
 app.use('/login',Login);
 app.use('/investorList',investorList);
 app.use('/startupList',startupList);
+app.use('/StartupDashboard',StartupDashboard);
 app.use('/notification',notifications);
 
 app.get('/logout', function(req, res){

@@ -84,10 +84,12 @@ function loggedIn() {
     $('.logout').hide();
     $('.login').show();
 }
+
 function loggedOut() {
     $('.logout').show();
     $('.login').hide();
 }
+
 let username = $('#username');
 function addusername(data) {
     let temp = `Hi ${data['UserID']}<i class="dropdown icon"></i>`;
@@ -103,3 +105,35 @@ function approach() {
         console.log(status);
     });
 }
+
+let menu = {};
+
+// ready event
+menu.ready = function() {
+
+    // selector cache
+    let
+        $dropdownItem = $('.menu .dropdown .item'),
+        $menuItem     = $('.menu a.item, .menu .link.item').not($dropdownItem),
+        // alias
+        handler = {
+            activate: function() {
+                if(!$(this).hasClass('dropdown browse')) {
+                    $(this)
+                        .addClass('active')
+                        .closest('.ui.menu')
+                        .find('.item')
+                        .not($(this))
+                        .removeClass('active')
+                    ;
+                }
+            }
+
+        };
+
+    $menuItem.on('click', handler.activate);
+
+};
+
+// attach ready event
+$(document).ready(menu.ready);

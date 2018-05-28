@@ -35,7 +35,7 @@ $(document).ready(function() {
 function AppendList(data) {
     let temp = "";
     $.each(data, function (index, value) {
-        temp += `<div class="item">
+        temp += `<div class="item" id="${value['_id']}">
                     <div class="image">
                         <img src="https://semantic-ui.com/images/avatar2/large/kristy.png">
                     </div>
@@ -48,7 +48,7 @@ function AppendList(data) {
                             <p>${value['AboutCompany']}</p>
                         </div>
                         <div class="extra">
-                            <button onclick="approach()" class="ui button secondary" id="Approach${index}">Approach</button>
+                            <button onclick="approach(this.id)" class="ui button secondary" id="Approach${index}">Approach</button>
                         </div>
                     </div>
                 </div>`;
@@ -101,10 +101,15 @@ function addusername(data) {
     username.html(temp);
 }
 
-function approach() {
+function approach(buttonId) {
+    let approchButton = $('#'+ buttonId);
+    console.log(buttonId.substring(8));
     $.ajax({
-        type: 'GET',
-        url: '/notification'
+        type: 'POST',
+        url: '/notification',
+        data: {
+            recv_id: buttonId.substring(8)
+        }
     }).done(function (data) {
     }).fail(function (xhr,status) {
         console.log(status);

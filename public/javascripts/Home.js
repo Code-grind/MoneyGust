@@ -78,7 +78,7 @@ function addDashboard(data) {
                 <a class="item" href="/logout">Signed Out</a>`
     }
     else {
-        temp = `<a class="item" href="StartupDashboard.html">Dashboard</a>
+        temp = `<a class="item" href="/StartupDashboard">Dashboard</a>
                 <a class="item">History</a>
                 <a class="item">Settings</a>
                 <a class="item" href="/logout">Signed Out</a>`

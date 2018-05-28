@@ -53,12 +53,16 @@ let startupSchema = new Schema({
 let notificationSchema = new Schema({
     RecevID: {type: Schema.Types.ObjectId, ref: 'startupSchema'},
     Type: String,
+    Date: { type: Date, default: Date.now },
+    Subject: String,
+    Sender: String,
     Messages: String
 });
 
 let investor = mongoose.model('investorDetails',investorSchema);
 let startup = mongoose.model('startupDetails',startupSchema);
 let notif = mongoose.model('Notification',notificationSchema);
+
 module.exports = {
     investor,
     startup,
