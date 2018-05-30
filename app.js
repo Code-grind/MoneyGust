@@ -5,6 +5,7 @@ let logger = require('morgan');
 let cookieParser = require('cookie-parser');
 let bodyParser = require('body-parser');
 let passport = require('passport');
+let expressValidator = require('express-validator');
 let session = require('express-session');
 
 require('./config/passport');
@@ -29,6 +30,7 @@ app.set('view engine', 'pug');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(expressValidator());
 app.use(cookieParser());
 app.use(session({secret: 'dog is here',resave: false,saveUninitialized: false,
     expires: new Date(Date.now() + (30 * 86400 * 1000))}));

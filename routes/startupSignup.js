@@ -29,6 +29,43 @@ router.post('/',function (req,res){
         //Notification
         Notification: []
     });
+
+
+    // variables used in validation
+    var Linkedinurl = req.body.LinkedInUrl;
+    var Companyurl = req.body.CompanyWebsite;
+    var fullname = req.body.FullName;
+
+    // IMPLEMENTING VALIDATION FOR INVESTOR
+
+    req.checkBody('Password', 'password must be at least 5 chars long ')
+        .isLength({ min: 5 });
+    req.checkBody('Password','password and Confirm password must be same ')
+        .equals(req.body.ConfirmPassword);
+    req.checkBody('LinkedInUrl','LinkedIn URL entered is incorrect.')
+        .isURL({Linkedinurl});
+    req.checkBody('CompanyWebsite','Company website URL entered is incorrect.')
+        .isURL({Companyurl});
+    /*
+    req.checkBody('FullName','Company website URL entered is incorrect.')
+        .isAlphanumeric(fullname);
+    */
+
+    var errors = req.validationErrors();
+    // if an error occurs
+    if(errors){
+        for(i=0;i<errors.length;i++){
+            console.log(errors[i].msg);
+        }
+
+        res.send(errors);
+    }
+    // when no error occurs
+    else {
+        res.send("Your account has been created.Login to use your account.")
+    }
+
+
     let transporter = nodemailer.createTransport({
         service:"Gmail",
         secure: false, // true for 465, false for other ports
