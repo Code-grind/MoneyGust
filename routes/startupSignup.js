@@ -38,19 +38,18 @@ router.post('/',function (req,res){
 
     // IMPLEMENTING VALIDATION FOR INVESTOR
 
+    req.checkBody('FullName','Fullname entered is incorrect.')
+        .isAlpha();
     req.checkBody('Password', 'password must be at least 5 chars long ')
         .isLength({ min: 5 });
     req.checkBody('Password','password and Confirm password must be same ')
         .equals(req.body.ConfirmPassword);
     req.checkBody('LinkedInUrl','LinkedIn URL entered is incorrect.')
         .isURL({Linkedinurl});
+    if(!!(req.body.CompanyWebsite)){
     req.checkBody('CompanyWebsite','Company website URL entered is incorrect.')
         .isURL({Companyurl});
-    /*
-    req.checkBody('FullName','Company website URL entered is incorrect.')
-        .isAlphanumeric(fullname);
-    */
-
+    }
     var errors = req.validationErrors();
     // if an error occurs
     if(errors){
@@ -58,7 +57,7 @@ router.post('/',function (req,res){
             console.log(errors[i].msg);
         }
 
-        res.send(errors);
+        return res.send(errors);
     }
     // when no error occurs
     else {
