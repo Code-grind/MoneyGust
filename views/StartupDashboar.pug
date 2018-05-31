@@ -6,6 +6,7 @@ html
         link(rel='stylesheet', href="https://fonts.googleapis.com/icon?family=Material+Icons")
         //link(rel=stylesheet, href = "stylesheets/home.css")
         link(rel='stylesheet', href='/stylesheets/style.css')
+        link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/components/icon.min.css')
         title=title
     body
         div.ui.large.top.fixed.hidden.menu.secondary#fixedmenu
@@ -29,24 +30,23 @@ html
             div.four.wide.column
                 div.ui.vertical.fluid.tabular.menu
                     - let option = choice
-                    - let message = AllMessages
                     case option
                         when 'Suggested Investor'
                             a.active.item(href='/StartupDashboard') Suggested Investor
                             a.item(href='/StartupDashboard/Notification') Notifications
-                                div.ui.teal.left.pointing.label=message.length
+                                div.ui.teal.left.pointing.label#notifCount
                             a.item Pics
                             a.item Companies
                             a.item Links
                         when 'Notifications'
                             a.item(href='/StartupDashboard') Suggested Investor
                             a.active.item(href='/StartupDashboard/Notification') Notifications
-                                div.ui.teal.left.pointing.label=message.length
+                                div.ui.teal.left.pointing.label#notifCount
                                 //div.ui.label 51
                             a.item Pics
                             a.item Companies
                             a.item Links
-            div.twelve.wide.stretched.column
+            div.eight.wide.stretched.column
                 case option
                     when 'Suggested Investor'
                         div.ui.segment
@@ -54,21 +54,10 @@ html
                             div.ui.divider
                             div.ui.divided.items#listContainer
                     when 'Notifications'
-                        div.ui.segment
-                            div.ui.divided.items
-                                div.item
-                                    div.content
-                                        div.ui.vertical.menu.fluid
-                                            each n,i in message
-                                                    a.item
-                                                        h4.ui.header=message[i].Sender
-                                                        p=message[i].Messages
-                                            else
-                                                div.container
-                                                    h2.ui.center.aligned.icon.header
-                                                        i.circular.users.icon
-                                                        div.content No new notifications.
-                                                            div.sub.header you’ll see updates here for interested investor in watched repositories.
+                        div.ui.segments#RecentContainer
+                        div.ui.segments#EarlierContainer
+            div.four.wide.column
+                div.ui.medium.rectangle.test.ad(data-text='Advertisement')
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
     script(src="/javascripts/semantic.min.js")
     script(src="/javascripts/StartupDashboard.js")

@@ -1,41 +1,23 @@
 let express = require('express');
+let moment = require('moment');
 let router = express.Router();
 let Schema = require('../database/schema');
 
-/* GET InvestorList. */
+/** GET InvestorList.*/
 router.get('/', function(req, res, next) {
-    function callback() {
-        console.log(AllMessages);
-        res.render('StartupDashboar', { title: 'Dashboard' , choice: 'Suggested Investor', AllMessages: AllMessages});
-    }
-    let itemsProcessed = 0;
-    let AllMessages = [];
-
-    req.user.Notification.forEach(function (value,index,array) {
-        Schema.notif.findOne({_id: value}, function (err,msg) {
-            if (err) return done(err);
-            if(msg===null) res.sendStatus(404);
-            AllMessages.push(msg);
-            itemsProcessed++;
-            if(itemsProcessed === array.length) {
-                callback();
-            }
-        })
-    });
+    res.render('StartupDashboar', { title: 'Dashboard' , choice: 'Suggested Investor'});
 });
 
-/* GET StartupNotification */
-router.use('/Notification',function (req,res) {
-    function callback() {
-        console.log(AllMessages);
-        res.render('StartupDashboar', { title: 'Notification' , choice: 'Notifications', AllMessages: AllMessages});
-    }
+router.get('/Notification',function (req,res) {
+    res.render('StartupDashboar', { title: 'Notification' , choice: 'Notifications'});
+});
+/** GET Startup Notifications*/
+router.get('/GetNotification',function (req,res) {
     let itemsProcessed = 0;
     let AllMessages = [];
-
+    console.log(AllMessages[0]);
     req.user.Notification.forEach(function (value,index,array) {
-
-        Schema.notif.findOne({_id: value}, function (err,msg) {
+        Schema.notif.findOne({_id: value}).lean().exec(function (err,msg) {
             if (err) return done(err);
 
             if(msg===null) res.sendStatus(404);
@@ -43,10 +25,27 @@ router.use('/Notification',function (req,res) {
             AllMessages.push(msg);
             itemsProcessed++;
             if(itemsProcessed === array.length) {
-                callback();
+                AfterAllDataReceived();
             }
         })
     });
-});
 
+    function AfterAllDataReceived() {
+        req.user.Notification.forEach(function (value,index,array) {
+            Schema.notif.updateOne({_id: value}, {$set: {UnRead: false} },function (err) {
+                if (err) return done(err);
+            })
+        });
+        /**To Calculate the duration of time elapsed from Send time of notification*/
+        let now = moment();
+        for(let i=0;i<AllMessages.length;i++)
+        {
+            let SendDate = moment(AllMessages[i].Date);
+            AllMessages[i].Earlier = (now.diff(SendDate,'minutes',true)>=30.0);
+            AllMessages[i].Duration = moment.duration(SendDate.diff(now)).humanize(true);
+        }
+        /**Render the template with notifications*/
+        res.send(AllMessages);
+    }
+});
 module.exports = router;

@@ -1,4 +1,7 @@
-let listcoin = $('#listContainer');
+let listcont = $('#listContainer');
+let RecentCont = $('#RecentContainer');
+let EarlierCont = $('#EarlierContainer');
+let notifCount = $('#notifCount');
 $(document).ready(function() {
     $.ajax({
         type: 'GET',
@@ -26,7 +29,19 @@ $(document).ready(function() {
             console.log(status);
         });
     });
-
+    if(RecentCont.length!==0)
+        $(GetNotification);
+    $(function (){
+        $.ajax({
+            url: "http://localhost:3000/notification/UnreadMessages",
+            type: "GET"
+        }).done(function (count) {
+            console.log(count);
+            notifCount.html(count);
+        }).fail(function (xhr,status) {
+            console.log(status);
+        })
+    });
     $('.masthead')
         .visibility({
             once: false,
@@ -76,10 +91,143 @@ function AppendList(data) {
                     </div>
                 </div>`;
     });
-    //$("body").html("");
-    listcoin.html(temp);
+    listcont.html(temp);
 }
 
+function AppendNotification(data) {
+    let Recent = `<div class="ui segment">
+                        <h5>Recent</h5>
+                    </div>`;
+    let Earlier = `<div class="ui segment">
+                        <h5>Earlier</h5>
+                    </div>`;
+    $.each(data, function (index, value) {
+        if(value.Earlier===false) {
+            if (value.UnRead === false) {
+                Recent += `<div class="ui segment">
+                    <div class="ui feed item">
+                        <div class="event">
+                            <div class="label"><img src="https://semantic-ui.com/images/avatar/small/elliot.jpg"></div>
+                            <div class="content">
+                                <div class="summary">
+                                    <a class="user">${value.Sender}</a>
+                                    <div class="date">${value.Duration}</div>
+                                    <div class="date">
+                                        <div class="ui dropdown">
+                                            <div class="text">
+                                                <i class="ellipsis horizontal icon"></i>
+                                            </div>
+                                            <div class="menu">
+                                                <a class="item" id="Del${value._id}" onclick="notification_delete(this.id)">Delete</a>
+                                                <a class="item">Unfollow</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="extra text">
+                                   ${value.Messages}
+                                </div>
+                            </div>
+                        </div>
+                     </div>
+                </div>`;
+            }
+            else {
+                Recent += `<div class="ui segment tertiary">
+                    <div class="ui feed item">
+                        <div class="event">
+                            <div class="label"><img src="https://semantic-ui.com/images/avatar/small/elliot.jpg"></div>
+                            <div class="content">
+                                <div class="summary">
+                                    <a class="user">${value.Sender}</a>
+                                    <div class="date">${value.Duration}</div>
+                                    <div class="date">
+                                        <div class="ui dropdown">
+                                            <div class="text">
+                                                <i class="ellipsis horizontal icon"></i>
+                                            </div>
+                                            <div class="menu">
+                                                <a class="item" id="Del${value._id}" onclick="notification_delete(this.id)">Delete</a>
+                                                <a class="item">Unfollow</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="extra text">
+                                   ${value.Messages}
+                                </div>
+                            </div>
+                        </div>
+                     </div>
+                </div>`
+            }
+        }
+        else
+        {
+            if (value.UnRead === false) {
+                Earlier += `<div class="ui segment">
+                    <div class="ui feed item">
+                        <div class="event">
+                            <div class="label"><img src="https://semantic-ui.com/images/avatar/small/elliot.jpg"></div>
+                            <div class="content">
+                                <div class="summary">
+                                    <a class="user">${value.Sender}</a>
+                                    <div class="date">${value.Duration}</div>
+                                    <div class="date">
+                                        <div class="ui dropdown">
+                                            <div class="text">
+                                                <i class="ellipsis horizontal icon"></i>
+                                            </div>
+                                            <div class="menu">
+                                                <a class="item" id="Del${value._id}" onclick="notification_delete(this.id)">Delete</a>
+                                                <a class="item">Unfollow</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="extra text">
+                                   ${value.Messages}
+                                </div>
+                            </div>
+                        </div>
+                     </div>
+                </div>`;
+            }
+            else {
+                Earlier += `<div class="ui segment tertiary">
+                    <div class="ui feed item">
+                        <div class="event">
+                            <div class="label"><img src="https://semantic-ui.com/images/avatar/small/elliot.jpg"></div>
+                            <div class="content">
+                                <div class="summary">
+                                    <a class="user">${value.Sender}</a>
+                                    <div class="date">${value.Duration}</div>
+                                    <div class="date">
+                                        <div class="ui dropdown">
+                                            <div class="text">
+                                                <i class="ellipsis horizontal icon"></i>
+                                            </div>
+                                            <div class="menu">
+                                                <a class="item" id="Del${value._id}" onclick="notification_delete(this.id)">Delete</a>
+                                                <a class="item">Unfollow</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="extra text">
+                                   ${value.Messages}
+                                </div>
+                            </div>
+                        </div>
+                     </div>
+                </div>`
+            }
+        }
+    });
+    RecentCont.html(Recent);
+    EarlierCont.html(Earlier);
+    $('.ui.dropdown').dropdown();
+}
 function loggedIn() {
     $('.logout').hide();
     $('.login').show();
@@ -134,6 +282,29 @@ menu.ready = function() {
     $menuItem.on('click', handler.activate);
 
 };
-
 // attach ready event
 $(document).ready(menu.ready);
+
+function GetNotification() {
+    $.ajax({
+        url: "http://localhost:3000/StartupDashboard/GetNotification",
+        type: "GET"
+    }).done(function (notifications) {
+        console.log(notifications);
+        AppendNotification(notifications);
+    }).fail(function (xhr,status) {
+        console.log(status);
+    })
+}
+function notification_delete(buttonId) {
+    console.log(buttonId.substring(3));
+    $.ajax({
+        type: 'DELETE',
+        url: `/notification/${buttonId.substring(3)}`,
+    }).done(function (data) {
+        console.log(data);
+        GetNotification();
+    }).fail(function (xhr,status) {
+        console.log(status);
+    });
+}

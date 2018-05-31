@@ -102,7 +102,6 @@ function addusername(data) {
 }
 
 function approach(buttonId) {
-    let approchButton = $('#'+ buttonId);
     console.log(buttonId.substring(8));
     $.ajax({
         type: 'POST',

@@ -56,7 +56,8 @@ let notificationSchema = new Schema({
     Date: { type: Date, default: Date.now },
     Subject: String,
     Sender: String,
-    Messages: String
+    Messages: String,
+    UnRead: {type: Boolean,default: true}
 });
 
 let investor = mongoose.model('investorDetails',investorSchema);
