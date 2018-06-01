@@ -21,7 +21,9 @@ let investorSchema = new Schema({
     // User Information
     UserID: String,
     Password: String,
-    Type: String
+    Type: String,
+    //Notification
+    Notification: [{type: Schema.Types.ObjectId, ref: 'notificationSchema'}]
 });
 
 let startupSchema = new Schema({

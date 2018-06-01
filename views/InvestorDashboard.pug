@@ -4,7 +4,6 @@ html
         meta(charset="UTF-8", name="viewport", content = "width = device-width, initial-scale = 1")
         link(rel='stylesheet', href="/stylesheets/semantic.css")
         link(rel='stylesheet', href="https://fonts.googleapis.com/icon?family=Material+Icons")
-        //link(rel=stylesheet, href = "stylesheets/home.css")
         link(rel='stylesheet', href='/stylesheets/style.css')
         link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/components/icon.min.css')
         title=title
@@ -22,7 +21,7 @@ html
                             span#username
                                 i.dropdown.icon
                         div.menu
-                            a.item(href="/StartupDashboard") Dashboard
+                            a.item(href="/InvestorDashboard") Dashboard
                             a.item History
                             a.item Settings
                             a.item(href="/logout") Signed Out
@@ -31,16 +30,16 @@ html
                 div.ui.vertical.fluid.tabular.menu
                     - let option = choice
                     case option
-                        when 'Suggested Investor'
-                            a.active.item(href='/StartupDashboard') Suggested Investor
-                            a.item(href='/StartupDashboard/Notification') Notifications
+                        when 'Suggested Startup'
+                            a.active.item(href='/InvestorDashboard') Suggested Startup
+                            a.item(href='/InvestorDashboard/Notification') Notifications
                                 div.ui.teal.left.pointing.label#notifCount
                             a.item Pics
                             a.item Companies
                             a.item Links
                         when 'Notifications'
-                            a.item(href='/StartupDashboard') Suggested Investor
-                            a.active.item(href='/StartupDashboard/Notification') Notifications
+                            a.item(href='/InvestorDashboard') Suggested Startup
+                            a.active.item(href='/InvestorDashboard/Notification') Notifications
                                 div.ui.teal.left.pointing.label#notifCount
                                 //div.ui.label 51
                             a.item Pics
@@ -48,7 +47,7 @@ html
                             a.item Links
             div.eight.wide.stretched.column
                 case option
-                    when 'Suggested Investor'
+                    when 'Suggested Startup'
                         div.ui.segment
                             h1 Investor List
                             div.ui.divider
@@ -64,7 +63,6 @@ html
                 div.ui.medium.rectangle.test.ad(data-text='Advertisement')
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
     script(src="/javascripts/semantic.min.js")
-    script(src="/javascripts/StartupDashboard.js")
-    <!--script(src="javascripts/Home.js")-->
+    script(src="/javascripts/InvestorDashboard.js")
 
 

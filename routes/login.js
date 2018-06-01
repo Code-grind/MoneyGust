@@ -7,7 +7,7 @@ router.post('/',passport.authenticate(['local.Startup','local.Investor'],{failur
         return res.redirect('/StartupDashboard');
     }
     if(req.user.Type==='Investor') {
-        res.redirect('/InvestorDashboard.html');
+        res.redirect('/InvestorDashboard');
     }
 });
 

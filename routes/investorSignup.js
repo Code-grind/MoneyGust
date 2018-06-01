@@ -4,7 +4,7 @@ let Schema = require('../database/schema');
 const nodemailer = require('nodemailer');
 
 router.post('/',function (req,res) {
-    console.log(req.body);
+    console.log(req.body.FullName);
     let investorSchema = Schema.investor({
         NoActiveMember: req.body.NoActiveMember,
         FullName: req.body.FullName,
@@ -28,13 +28,13 @@ router.post('/',function (req,res) {
     });
 
 
-    // variables used in validation
-    var Linkedinurl = req.body.LinkedInUrl;
-    var Companyurl = req.body.CompanyWebsite;
-    var fname = req.body.FullName;
+    // letiables used in validation
+    let Linkedinurl = req.body.LinkedInUrl;
+    let Companyurl = req.body.CompanyWebsite;
+    let fname = req.body.FullName;
     // IMPLEMENTING VALIDATION FOR INVESTOR
 
-    req.checkBody('Fullname','Your Fullname entered contains other values than alphabets.')
+    req.checkBody('FullName','Your Fullname entered contains other values than alphabets.')
         .isAlpha();
     req.checkBody('Password', 'password must be at least 5 chars long ')
         .isLength({ min: 5 });
@@ -47,13 +47,12 @@ router.post('/',function (req,res) {
             .isURL({Companyurl});
     }
 
-    var errors = req.validationErrors();
+    let errors = req.validationErrors();
     // if an error occurs
     if(errors){
         for(i=0;i<errors.length;i++){
             console.log(errors[i].msg);
         }
-
         return res.send(errors);
     }
     // when no error occurs
@@ -80,9 +79,6 @@ router.post('/',function (req,res) {
         text: 'Thank you for joining MoneyGust.',
         html:  '<b>Thank you for joining MoneyGust. ' +
         'We will help you in finding best startup to invest your money.</b>'
-
-        // html body
-
     };
 
 // send mail with defined transport object
@@ -97,17 +93,9 @@ router.post('/',function (req,res) {
 // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
 // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
 });
-
-
-
     investorSchema.save(function (err,data) {
         if(err) throw err;
     });
-
-
-    res.send("done");
-
-
 });
 
 

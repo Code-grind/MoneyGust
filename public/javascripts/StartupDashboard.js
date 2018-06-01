@@ -42,17 +42,9 @@ $(document).ready(function() {
             console.log(status);
         })
     });
-    $('.masthead')
-        .visibility({
-            once: false,
-            onBottomPassed: function () {
-                $('.fixed.menu').transition('fade in');
-            },
-            onBottomPassedReverse: function () {
-                $('.fixed.menu').transition('fade out');
-            }
-        });
-
+    $('.ui.labeled.icon.sidebar')
+        .sidebar('show')
+    ;
     // create sidebar and attach to menu open
     $('.ui.sidebar')
         .sidebar('attach events', '.toc.item');
@@ -85,7 +77,7 @@ function AppendList(data) {
                             <p>${value['AboutCompany']}</p>
                         </div>
                         <div class="extra">
-                            <button onclick="approach()" class="ui button secondary" id="Approach${index}">Approach</button>
+                            <button onclick="approach(this.id)" class="ui button secondary" id="Approach${index}">Approach</button>
                             <div class="ui label">Amount Investor can fund (dynamic)</div>
                         </div>
                     </div>
@@ -95,10 +87,10 @@ function AppendList(data) {
 }
 
 function AppendNotification(data) {
-    let Recent = `<div class="ui segment">
+    let Recent = `<div class="ui segment inverted secondary">
                         <h5>Recent</h5>
                     </div>`;
-    let Earlier = `<div class="ui segment">
+    let Earlier = `<div class="ui segment inverted secondary">
                         <h5>Earlier</h5>
                     </div>`;
     $.each(data, function (index, value) {
@@ -244,10 +236,14 @@ function addusername(data) {
     username.html(temp);
 }
 
-function approach() {
+function approach(buttonId) {
+    console.log(buttonId.substring(8));
     $.ajax({
-        type: 'GET',
-        url: '/notification'
+        type: 'POST',
+        url: '/notification/investor',
+        data: {
+            recv_id: buttonId.substring(8)
+        }
     }).done(function (data) {
     }).fail(function (xhr,status) {
         console.log(status);

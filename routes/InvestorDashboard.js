@@ -5,13 +5,13 @@ let Schema = require('../database/schema');
 
 /** GET InvestorList.*/
 router.get('/', function(req, res, next) {
-    res.render('StartupDashboar', { title: 'Dashboard' , choice: 'Suggested Investor'});
+    res.render('InvestorDashboard', { title: 'Dashboard' , choice: 'Suggested Startup'});
 });
 
 router.get('/Notification',function (req,res) {
-    res.render('StartupDashboar', { title: 'Notification' , choice: 'Notifications'});
+    res.render('InvestorDashboard', { title: 'Notification' , choice: 'Notifications'});
 });
-/** GET Startup Notifications*/
+/** GET Investor Notifications*/
 router.get('/GetNotification',function (req,res) {
     let itemsProcessed = 0;
     let AllMessages = [];
@@ -19,9 +19,7 @@ router.get('/GetNotification',function (req,res) {
     req.user.Notification.forEach(function (value,index,array) {
         Schema.notif.findOne({_id: value}).lean().exec(function (err,msg) {
             if (err) return done(err);
-
             if(msg===null) res.sendStatus(404);
-
             AllMessages.push(msg);
             itemsProcessed++;
             if(itemsProcessed === array.length) {
