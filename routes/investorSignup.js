@@ -2,6 +2,8 @@ let express = require('express');
 let router = express.Router();
 let Schema = require('../database/schema');
 const nodemailer = require('nodemailer');
+var bcrypt = require('bcrypt');
+const saltRounds = 10;
 
 router.post('/',function (req,res) {
     console.log(req.body.FullName);
@@ -23,7 +25,7 @@ router.post('/',function (req,res) {
 
         //User Information
         UserID: req.body.UserID,
-        Password: req.body.Password,
+        Password: bcrypt.hashSync(req.body.Password,saltRounds),
         Type: "Investor"
     });
 
@@ -93,9 +95,12 @@ router.post('/',function (req,res) {
 // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
 // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
 });
-    investorSchema.save(function (err,data) {
-        if(err) throw err;
-    });
+
+        investorSchema.save(function (err,data) {
+
+            if(err) throw err;
+        });
+
 });
 
 
