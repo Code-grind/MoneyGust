@@ -71,7 +71,7 @@ app.use('/success', function(req, res){
 app.use(function(req, res, next) {
   let err = new Error('Not Found');
   err.status = 404;
-  next(err);
+  res.render('404 Not found');
 });
 
 // error handler

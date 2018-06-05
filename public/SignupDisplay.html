@@ -140,31 +140,38 @@
             </div>
         </div>
     </div>
-<div class="ui mini modal hidden" style="display: block !important;">
+<div class="ui mini modal hidden" style="width: 455px;height: 340px;opacity: 0.7">
     <i class="close icon"></i>
-    <div class="ui header centered green">
-        Log In to Your Account
-    </div>
-    <div class="content">
-        <form class="ui form" method="post" id="Login-form" action="/login">
-            <div class="field">
-                <label for="Emailfield">Phone or E-mail Address</label>
-                <input type="text" name="Email" id="Emailfield">
+    <div class="ui middle aligned center aligned grid">
+        <div class="thirteen wide column" style="padding: 40px 8px 30px 8px">
+            <div class="content" style="padding-left: 20px">
+                <img class="ui centered medium image" src="images/logomoneygustX.png">
             </div>
-            <div class="field">
-                <label for="passwordField">Password</label>
-                <input type="Password" name="Password" id="passwordField">
-            </div>
-            <div class="field">
-                <div class="ui checkbox">
-                    <input type="checkbox" checked="checked" name="rememberMe" tabindex="0" class="hidden" id="rememberMe">
-                    <label for="rememberMe">Keep me signed in</label>
+            <form class="ui form" method="post" id="Login-form" action="/login">
+                <div class="ui segment">
+                    <div class="field">
+                        <div class="ui left icon input">
+                            <i class="user icon"></i>
+                            <input type="text" name="Email" id="Emailfield" placeholder="E-mail address">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui left icon input">
+                            <i class="lock icon"></i>
+                            <input type="Password" name="Password" id="passwordField" placeholder="Password">
+                        </div>
+                    </div>
+                    <button class="ui linkedin fluid large submit button" id="submit" form="Login-form">Sign in</button>
                 </div>
+                <div class="ui error message"></div>
+            </form>
+            <div class="ui text">
+                <a href="">Forgot password?</a>
             </div>
-        </form>
-    </div>
-    <div class="actions">
-        <button class="ui green button" id="submit" form="Login-form">Send</button>
+            <div class="ui">
+                Not a member?<a href="">Join now</a>
+            </div>
+        </div>
     </div>
 </div>
 </body>
