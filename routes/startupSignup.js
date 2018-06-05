@@ -2,11 +2,10 @@ let express = require('express');
 let router = express.Router();
 let Schema = require('../database/schema');
 const nodemailer = require('nodemailer');
-var bcrypt = require('bcrypt');
+let bcrypt = require('bcrypt');
 const saltRounds = 10;
 
-
-router.post('/',function (req,res){
+router.post('/',function (req,res) {
     console.log(req.body);
     let startupSchema = Schema.startup({
         // Founder Information
@@ -35,45 +34,41 @@ router.post('/',function (req,res){
 
 
     // variables used in validation
-    var Linkedinurl = req.body.LinkedInUrl;
-    var Companyurl = req.body.CompanyWebsite;
-    var fullname = req.body.FullName;
+    let Linkedinurl = req.body.LinkedInUrl;
+    let Companyurl = req.body.CompanyWebsite;
+    let fullname = req.body.FullName;
 
     // IMPLEMENTING VALIDATION FOR INVESTOR
 
-    req.checkBody('FullName','Fullname entered is incorrect.')
-        .isAlpha();
-    req.checkBody('Password', 'password must be at least 5 chars long ')
-        .isLength({ min: 5 });
-    req.checkBody('Password','password and Confirm password must be same ')
-        .equals(req.body.ConfirmPassword);
-    req.checkBody('LinkedInUrl','LinkedIn URL entered is incorrect.')
-        .isURL({Linkedinurl});
-    if(!!(req.body.CompanyWebsite)){
-    req.checkBody('CompanyWebsite','Company website URL entered is incorrect.')
-        .isURL({Companyurl});
+    req.checkBody('FullName','Fullname entered is incorrect.').isAlpha();
+
+    req.checkBody('Password', 'password must be at least 5 chars long ').isLength({ min: 5 });
+
+    req.checkBody('Password','Password and Confirm Password must be same ').equals(req.body.ConfirmPassword);
+
+    req.checkBody('LinkedInUrl','LinkedIn URL entered is incorrect.').isURL({Linkedinurl});
+
+    if(!!(req.body.CompanyWebsite)) {
+        req.checkBody('CompanyWebsite','Company website URL entered is incorrect.').isURL({Companyurl});
     }
-    var errors = req.validationErrors();
+    let errors = req.validationErrors();
     // if an error occurs
-    if(errors){
-        for(i=0;i<errors.length;i++){
+    if(errors) {
+        for(i=0;i<errors.length;i++) {
             console.log(errors[i].msg);
         }
-
         return res.send(errors);
     }
-    // when no error occurs
     else {
-        res.send("Your account has been created.Login to use your account.")
+        res.send("Your account has been created. Login to use your account.")
     }
-
 
     let transporter = nodemailer.createTransport({
         service:"Gmail",
         secure: false, // true for 465, false for other ports
         auth: {
             user: "MoneyGust101@gmail.com", // generated ethereal user
-            pass: "MoneyGust@123" // generated ethereal password
+            pass: "MoneyGust@123"           // generated ethereal password
         }
     });
 
@@ -85,11 +80,7 @@ router.post('/',function (req,res){
         text: 'Thank you for joining MoneyGust.',
         html:  '<b>Thank you for joining MoneyGust.' +
         'We will help you in finding the right investor for you.</b>'
-
-        // html body
-
     };
-
     // send mail with defined transport object
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
