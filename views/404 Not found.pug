@@ -29,6 +29,27 @@ html(lang='en')
                 margin-bottom: 25px;
             }
     body
+        #fixedmenu.ui.large.top.fixed.hidden.menu.secondary
+            .ui.container
+                a.item(href='#')
+                    img.ui.small.image(src='images/logomoneygustX.png')
+                .right.menu
+                    .item
+                    .ui.dropdown.item.login
+
+        form#Login-form.ui.form(method='post', action='/login')
+            .ui.segment
+                .field
+                    .ui.left.icon.input
+                        i.user.icon
+                        input#Emailfield(type='text', name='Email', placeholder='E-mail address')
+                .field
+                    .ui.left.icon.input
+                        i.lock.icon
+                        input#passwordField(type='Password', name='Password', placeholder='Password')
+                button#submit.ui.linkedin.fluid.large.submit.button(form='Login-form') Sign in
+            .ui.error.message
+
         .ui.container.center.aligned.grid#box
             .ui.floating.message.huge
                 .ui.huge.header#opps
@@ -52,4 +73,11 @@ html(lang='en')
                     |             |
                     |
                     a.item(href='getFunded.html') Get Funding
-
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+    script(src="/javascripts/semantic.min.js")
+    script.
+        $('.ui.sticky')
+            .sticky({
+                context: '#Login-form'
+            })
+        ;
