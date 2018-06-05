@@ -7,6 +7,9 @@ let bodyParser = require('body-parser');
 let passport = require('passport');
 let expressValidator = require('express-validator');
 let session = require('express-session');
+var bcrypt = require('bcrypt');
+const saltRounds = 10;
+
 
 require('./config/passport');
 let indexRouter = require('./routes/index');

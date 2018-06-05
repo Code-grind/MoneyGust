@@ -2,6 +2,9 @@ let express = require('express');
 let router = express.Router();
 let Schema = require('../database/schema');
 const nodemailer = require('nodemailer');
+var bcrypt = require('bcrypt');
+const saltRounds = 10;
+
 
 router.post('/',function (req,res){
     console.log(req.body);
@@ -24,7 +27,7 @@ router.post('/',function (req,res){
 
         // User Information
         UserID: req.body.UserID,
-        Password: req.body.Password,
+        Password: bcrypt.hashSync(req.body.Password,saltRounds),
         Type: "Startup",
         //Notification
         Notification: []

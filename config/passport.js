@@ -2,6 +2,8 @@
 let passport = require('passport');
 let Schema = require('../database/schema');
 let LocalStrategy = require('passport-local').Strategy;
+var bcrypt = require('bcrypt');
+const saltRounds = 10;
 
 passport.serializeUser(function (user,done) {
     console.log("Sserialize");
@@ -46,7 +48,8 @@ passport.use('local.Startup',new LocalStrategy({
             console.log("StaMail");
             return done(null,false,{ message: 'Incorrect Email' })
         }
-        if (user.Password !== password) {
+
+        if (bcrypt.compareSync(user.Password,password)) {
             console.log("Stapass");
             return done(null, false, {message: 'Wrong password'})
         }
@@ -68,7 +71,7 @@ passport.use('local.Investor',new LocalStrategy({
             console.log("StaMail");
             return done(null,false,{ message: 'Incorrect Email' })
         }
-        if (user.Password !== password) {
+        if (bcrypt.compareSync(user.Password,password)) {
             console.log("Stapass");
             return done(null, false, {message: 'Wrong password'})
         }
