@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name = "viewport" content = "width = device-width, initial-scale = 1">
-    <link rel="stylesheet" href="stylesheets/semantic.css">
+    <link rel="stylesheet" href="/out/semantic.css">
     <link href="stylesheets/home.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="stylesheets/glide.core.min.css">
-    <link rel="stylesheet" href="stylesheets/glide.theme.min.css">
+    <!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
+    <link rel="stylesheet" href="/css/glide.core.min.css">
+    <link rel="stylesheet" href="/css/glide.theme.min.css">
     <link rel = "stylesheet" href = "stylesheets/style.css">
     <title>MoneyGust</title>
     <base href='http://localhost:3000/'>
@@ -25,9 +25,8 @@
         <a class="item" href="getFunded.html">Get Funding</a>
         <a class="item">
             <div class="content">
-                More
                 <div class="ui inline dropdown">
-                    <i class="dropdown icon"></i>
+                    More<i class="dropdown icon"></i>
                     <div class="menu">
                         <div class="item" ><i class="calendar alternate outline icon"></i>Events</div>
                         <div class="item" ><i class="edit outline icon"></i>Blog</div>
@@ -65,9 +64,8 @@
     <a class="item" href="getFunded.html">Get Funding</a>
     <a class="item">
         <div class="content">
-            More
             <div class="ui inline dropdown">
-                <i class="dropdown icon"></i>
+                More<i class="dropdown icon"></i>
                 <div class="menu">
                     <div class="item"><i class="calendar alternate outline icon"></i>Events</div>
                     <div class="item" ><i class="edit outline icon"></i>Blog</div>
@@ -410,9 +408,18 @@
                 <div class="seven wide column">
                     <h4 class="ui inverted header">Footer Header</h4>
                     <p>Extra space for a call to action inside the footer that could help re-engage users.</p>
-                    <div class="ui circular icon google plus button">
+                    <button class="ui circular facebook icon button">
+                        <i class="facebook icon"></i>
+                    </button>
+                    <button class="ui circular twitter icon button">
+                        <i class="twitter icon"></i>
+                    </button>
+                    <button class="ui circular linkedin icon button">
+                        <i class="linkedin icon"></i>
+                    </button>
+                    <button class="ui circular google plus icon button">
                         <i class="google plus icon"></i>
-                    </div>
+                    </button>
                 </div>
             </div>
         </div>
@@ -476,7 +483,7 @@
 </div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="javascripts/semantic.min.js"></script>
-<script src="javascripts/glide.min.js"></script>
+<script src="/out/semantic.min.js"></script>
+<script src="/glide.min.js"></script>
 <script src="javascripts/Home.js"></script>
 </html>

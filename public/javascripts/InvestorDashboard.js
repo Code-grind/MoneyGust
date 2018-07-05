@@ -77,7 +77,7 @@ function AppendList(data) {
                             <p>${value['AboutCompany']}</p>
                         </div>
                         <div class="extra">
-                            <button onclick="approach(this.id)" class="ui button secondary" id="Approach${index}">Approach</button>
+                            <button onclick="approach(this.id)" class="ui active button" id="Approach${index}"><i class="user icon"></i>Follow</button>
                         </div>
                     </div>
                 </div>`;

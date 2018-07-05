@@ -72,13 +72,15 @@ let dashboard = $('.abcde');
 function addDashboard(data) {
     let temp = '';
     if(data['Type']==='Investor'){
-        temp = `<a class="item" href="InvestorDashboard.html">Dashboard</a>
+        temp = `<a class="item" href="InvestorProfile.html">Your Profile</a>
+                <a class="item" href="InvestorDashboard.html">Dashboard</a>
                 <a class="item">History</a>
                 <a class="item">Settings</a>
                 <a class="item" href="/logout">Signed Out</a>`
     }
     else {
-        temp = `<a class="item" href="/StartupDashboard">Dashboard</a>
+        temp = `<a class="item" href="StartupProfile.html">Your Profile</a>
+                <a class="item" href="/StartupDashboard">Dashboard</a>
                 <a class="item">History</a>
                 <a class="item">Settings</a>
                 <a class="item" href="/logout">Signed Out</a>`

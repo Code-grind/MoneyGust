@@ -7,7 +7,7 @@ let bodyParser = require('body-parser');
 let passport = require('passport');
 let expressValidator = require('express-validator');
 let session = require('express-session');
-var bcrypt = require('bcrypt');
+let bcrypt = require('bcrypt');
 const saltRounds = 10;
 
 
@@ -40,8 +40,9 @@ app.use(session({secret: 'dog is here',resave: false,saveUninitialized: false,
     expires: new Date(Date.now() + (30 * 86400 * 1000))}));
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(express.static(path.join(__dirname,'public')));
-app.use(express.static(path.join(__dirname,'sementic')));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'sementic')));
+app.use(express.static(path.join(__dirname, 'node_modules/@glidejs/glide/dist')));
 if (app.get('env') === 'development') {
     app.locals.pretty = true;
 }
