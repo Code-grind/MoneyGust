@@ -19,60 +19,60 @@
     <form class="ui form" method="POST" action="http://localhost:3000/investorSignup">
         <h3>Investor Information</h3>
         <div class="ui divider"></div>
-    <div>
-        <div class="inline fields" id="FounderInfo">
-            <div class="seven wide required field">
-                <label>How many current active members do you have? </label>
-            </div>
-            <div class="four wide field">
-                <select required class="ui dropdown" name="NoActiveMember">
-                    <option value="0">Select an option</option>
-                    <option value="1">below 10</option>
-                    <option value="2">between 10-15</option>
-                    <option value="3">between 15-30</option>
-                    <option value="4">between 30-50</option>
-                    <option value="5">between 50-100</option>
-                    <option value="6">Above 100</option>
+        <div>
+            <div class="inline fields" id="FounderInfo">
+                <div class="seven wide required field">
+                    <label>How many current active members do you have? </label>
+                </div>
+                <div class="four wide field">
+                    <select required class="ui dropdown" name="NoActiveMember">
+                        <option value="0">Select an option</option>
+                        <option value="1">below 10</option>
+                        <option value="2">between 10-15</option>
+                        <option value="3">between 15-30</option>
+                        <option value="4">between 30-50</option>
+                        <option value="5">between 50-100</option>
+                        <option value="6">Above 100</option>
 
-                </select>
+                    </select>
+
+                </div>
+            </div>
+
+            <div class="inline fields">
+
+                <div class="seven wide required field">
+                    <label>Enter your Name</label>
+                </div>
+                <div class="four wide required field">
+                    <input type="text" name="FullName" placeholder="Full Name" required >
+                </div>
 
             </div>
+
+            <div class="inline fields">
+
+                <div class="seven wide required field">
+                    <label>Enter your Email</label>
+                </div>
+                <div class="four wide required field">
+                    <input type="email" name="Email" placeholder="Email" required >
+                </div>
+
+            </div>
+
+            <div class="inline fields">
+
+                <div class="seven wide required field">
+                    <label>Enter your LinkedIn URL</label>
+                </div>
+                <div class="four wide required field">
+                    <input type="text" placeholder="LinkedIn URL" name="LinkedInUrl" required >
+                </div>
+
+            </div>
+
         </div>
-
-        <div class="inline fields">
-
-            <div class="seven wide required field">
-                <label>Enter your Name</label>
-            </div>
-            <div class="four wide required field">
-                <input type="text" name="FullName" placeholder="Full Name" required >
-            </div>
-
-        </div>
-
-        <div class="inline fields">
-
-            <div class="seven wide required field">
-                <label>Enter your Email</label>
-            </div>
-            <div class="four wide required field">
-                <input type="email" name="Email" placeholder="Email" required >
-            </div>
-
-        </div>
-
-        <div class="inline fields">
-
-            <div class="seven wide required field">
-                <label>Enter your LinkedIn URL</label>
-            </div>
-            <div class="four wide required field">
-                <input type="text" placeholder="LinkedIn URL" name="LinkedInUrl" required >
-            </div>
-
-        </div>
-
-    </div>
 
         <h3>Investor's Company Information</h3>
         <div class="ui divider"></div>
@@ -260,19 +260,19 @@
 
         </div>
     </form>
-<!--
-    <button onclick="asd(1)">Hide</button>
-    <button onclick="asd(2)">Show</button>
--->
+    <!--
+        <button onclick="asd(1)">Hide</button>
+        <button onclick="asd(2)">Show</button>
+    -->
 </div>
 
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="javascripts/semantic.min.js"></script>
+<script src="/out/semantic.min.js"></script>
 <script>
     $('.ui.dropdown')
         .dropdown()
     ;
 </script>
-<script src="/out/semantic.min.js"></script>
+<script src="javascripts/signupstartup.js"></script>
 </html>
