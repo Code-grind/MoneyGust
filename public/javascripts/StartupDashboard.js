@@ -1,3 +1,7 @@
+var amountDisplay = ["a","b","c","d"];
+
+
+
 let listcont = $('#listContainer');
 let RecentCont = $('#RecentContainer');
 let EarlierCont = $('#EarlierContainer');
@@ -78,7 +82,8 @@ function AppendList(data) {
                         </div>
                         <div class="extra">
                             <button onclick="approach(this.id)" class="ui button secondary" id="Approach${index}">Approach</button>
-                            <div class="ui label">Amount Investor can fund (dynamic)</div>
+                            <div class="ui label">Amount Investor can fund (dynamic) ${value['AmountToInvest']}  
+    </div>
                         </div>
                     </div>
                 </div>`;
