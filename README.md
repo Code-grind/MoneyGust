@@ -45,5 +45,7 @@ MoneyGust is a web-based platform that gives early stage companies(startups) and
 
  - After regular intervals, a unique pitching session event will be held, details of which will be sent on the respective mails of the participants(investors and startup executives). Every month a screening of around 300 companies has to be done and 6 companies have to be selected to pitch for 5 minutes on a one-on-one basis. Investors can ask questions throughout the pitch, before deciding who to follow up with and have further discussions with.
 
-### Contributors
-[an example](http://example.com/ "Title")
+### Team
+ - [Aakash Kumar Goryan](https://github.com/Aakash-Kumar-Goryan)
+
+ - [Reshu Verma](https://github.com/vreshu1919)
