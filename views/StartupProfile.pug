@@ -1,0 +1,88 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8', name='viewport', content='width = device-width initial-scale = 1')
+        title=title
+        link(rel='stylesheet', href='/out/semantic.css')
+        // <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/components/icon.min.css">
+        link(rel='stylesheet', href='stylesheets/style.css')
+        style.
+            .inputfile {
+                width: 0.1px;
+                height: 0.1px;
+                opacity: 0;
+                overflow: hidden;
+                position: absolute;
+                z-index: -1;
+            }
+            .card{
+                box-shadow: none !important;
+            }
+    body
+        #fixedmenu.ui.large.top.fixed.hidden.menu.secondary
+            .ui.container
+                a.item(href='#')
+                    img.ui.small.image(src='images/logomoneygustX.png')
+                a.active.item(href='Home.html') Invest
+                a.item(href='AboutUs.html') About us
+                a.item(href='howtoinvest.html') how to invest
+                a.item(href='getFunded.html') Get Funding
+                .right.menu
+                    .ui.dropdown.item.login
+                        .text
+                            img.ui.avatar.image(src='https://semantic-ui.com/images/avatar2/large/kristy.png')
+                            span#username
+                                i.dropdown.icon
+                        .menu
+                            a.item(href='/StartupDashboard') Dashboard
+                            a.item(href='/StartupDashboard') History
+                            a.item(href='/StartupDashboard') Settings
+                            a.item(href='/logout') Signed Out
+        .ui.grid
+            .four.wide.column
+                .ui.special.cards
+                    .card
+                        .blurring.dimmable.image
+                            .ui.dimmer
+                                .content
+                                    .center
+                                        input#embedpollfileinput.inputfile(type='file', (change)='fileEvent($event)')
+                                        label(for='embedpollfileinput')
+                                            i.massive.link.camera.icon
+                            img.ui.medium.rounded.image(src='https://semantic-ui.com/images/wireframe/square-image.png')
+                        .content
+                            h1 Joel	Alvarado
+                            .header Elliot Fu
+                            .meta Friend
+                            .description
+                                | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                | labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+            .twelve.wide.column
+                .ui.tabular.menu
+                    a.active.item
+                        | Overview
+                    a.item
+                        | Executive Summary
+                    a.item
+                        | Financial
+                .ui.piled.segment
+                    h4.ui.header Company Summary
+                    p
+                        | Te eum doming eirmod, nominati pertinacia argumentum ad his. Ex eam alia facete scriptorem, est autem
+                        | aliquip detraxit at. Usu ocurreret referrentur at, cu epicurei appellantur vix. Cum ea laoreet recteque
+                        | electram, eos choro alterum definiebas in. Vim dolorum definiebas an. Mei ex natum rebum iisque.
+                    .ui.vertical.segment
+                        h4.ui.header Team
+                    .ui.vertical.segment
+                        img.ui.mini.circular.image(src='https://semantic-ui.com/images/wireframe/square-image.png')
+                    .ui.vertical.segment
+                        img.ui.mini.circular.image(src='https://semantic-ui.com/images/wireframe/square-image.png')
+                    .ui.vertical.segment
+                        img.ui.mini.circular.image(src='https://semantic-ui.com/images/wireframe/square-image.png')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+    script(src='/out/semantic.min.js')
+    script(src='javascripts/StartupProfile.js')
+    script.
+        $('.special.cards .image').dimmer({
+            on: 'hover'
+        });

@@ -22,6 +22,7 @@ let startupList = require('./routes/startuplist');
 let notifications = require('./routes/notification');
 let StartupDashboard = require('./routes/StartupDashboard');
 let InvestorDashboard = require('./routes/InvestorDashboard');
+let StartupProfile = require('./routes/StartupProfile');
 
 let app = express();
 
@@ -57,6 +58,7 @@ app.use('/startupList',startupList);
 app.use('/StartupDashboard',StartupDashboard);
 app.use('/InvestorDashboard',InvestorDashboard);
 app.use('/notification',notifications);
+app.use('/StartupProfile',StartupProfile);
 
 app.get('/logout', function(req, res){
     req.logout();
