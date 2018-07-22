@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
-const databaseName = 'moneygustdb';
-const url = 'mongodb://localhost/'+databaseName;
+///const databaseName = 'moneygustdb';
+///const url = 'mongodb://localhost/'+databaseName;
+///mLab Database
+const url = 'mongodb://aakash:aakash1@ds247101.mlab.com:47101/moneygustdb';
 
 function connect() {
     mongoose.connect(url)

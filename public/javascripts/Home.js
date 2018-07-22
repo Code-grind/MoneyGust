@@ -19,16 +19,7 @@ $(document).ready(function() {
         console.log(status);
         loggedOut();
     });
-    $('.masthead')
-        .visibility({
-            once: false,
-            onBottomPassed: function () {
-                $('.fixed.menu').transition('fade in');
-            },
-            onBottomPassedReverse: function () {
-                $('.fixed.menu').transition('fade out');
-            }
-        }).css('min-height', $(window).height());
+
 
     // create sidebar and attach to menu open
     $('.ui.sidebar')
@@ -62,6 +53,16 @@ function loggedIn() {
 function loggedOut() {
     $('.logout').show();
     $('.login').hide();
+    $('.masthead')
+        .visibility({
+            once: false,
+            onBottomPassed: function () {
+                $('.fixed.menu').transition('fade in');
+            },
+            onBottomPassedReverse: function () {
+                $('.fixed.menu').transition('fade out');
+            }
+        }).css('min-height', $(window).height());
 }
 let username = $('.username');
 function addusername(data) {
