@@ -23,6 +23,7 @@ let notifications = require('./routes/notification');
 let StartupDashboard = require('./routes/StartupDashboard');
 let InvestorDashboard = require('./routes/InvestorDashboard');
 let StartupProfile = require('./routes/StartupProfile');
+let InvestorProfile = require('./routes/InvestorProfile');
 
 let app = express();
 
@@ -59,6 +60,10 @@ app.use('/StartupDashboard',StartupDashboard);
 app.use('/InvestorDashboard',InvestorDashboard);
 app.use('/notification',notifications);
 app.use('/StartupProfile',StartupProfile);
+app.use('/InvestorProfile',InvestorProfile);
+app.use('/UnderConstruction', ()=> {
+    res.render('Under Construction', { title: 'Under Construction'});
+});
 
 app.get('/logout', function(req, res){
     req.logout();

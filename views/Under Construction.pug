@@ -1,0 +1,81 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset="UTF-8", name="viewport", content = "width = device-width, initial-scale = 1")
+        title=title
+        base(href='http://localhost:3000/')
+        link(rel='stylesheet', href="/out/semantic.css")
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        link(href='https://fonts.googleapis.com/css?family=Open+Sans', rel='stylesheet')
+        style.
+            body{
+                font-family: 'Open Sans', sans-serif;
+            }
+            #box {
+                padding-top: 100px;
+            }
+            #opps {
+                font-family: 'Open Sans:300', sans-serif;
+                font-size: 70px;
+                font-weight: 300;
+                margin-bottom: 25px;
+            }
+            #soff {
+                font-family: 'Open Sans:300', sans-serif;
+                font-size: 40px;
+                font-weight: 300;
+                margin-bottom: 25px;
+            }
+    body
+        #fixedmenu.ui.large.top.fixed.hidden.menu.secondary
+            .ui.container
+                a.item(href='#')
+                    img.ui.small.image(src='images/logomoneygustX.png')
+                .right.menu
+                    .item
+                    .ui.dropdown.item.login
+
+        //form#Login-form.ui.form(method='post', action='/login')
+            .ui.segment
+                .field
+                    .ui.left.icon.input
+                        i.user.icon
+                        input#Emailfield(type='text', name='Email', placeholder='E-mail address')
+                .field
+                    .ui.left.icon.input
+                        i.lock.icon
+                        input#passwordField(type='Password', name='Password', placeholder='Password')
+                button#submit.ui.linkedin.fluid.large.submit.button(form='Login-form') Sign in
+            .ui.error.message
+
+        .ui.container.center.aligned.grid#box
+            .ui.floating.message.huge
+                .ui.huge.header#opps
+                    |   Under Construction
+                p#soff Available Soon!
+                p
+                    | The requested page doesn't exist.
+                p
+                    | Please
+                    |
+                    a(title='Contact us') contact us
+                    |  or click on one of the links below:
+                .buttons
+                    a(href='/') Homepage
+                    |             |
+                    |
+                    a(class="item", href="TempEventDisplay.html") Events
+                    |             |
+                    |
+                    a.item(href='howtoinvest.html') How to invest
+                    |             |
+                    |
+                    a.item(href='getFunded.html') Get Funding
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+    script(src="/out/semantic.min.js")
+    script.
+        $('.ui.sticky')
+            .sticky({
+                context: '#Login-form'
+            })
+        ;
