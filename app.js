@@ -42,7 +42,7 @@ app.use(session({secret: 'dog is here',resave: false,saveUninitialized: false,
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'sementic')));
+app.use(express.static(path.join(__dirname, 'semantic')));
 app.use(express.static(path.join(__dirname, 'node_modules/@glidejs/glide/dist')));
 if (app.get('env') === 'development') {
     app.locals.pretty = true;
