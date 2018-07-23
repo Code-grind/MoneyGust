@@ -1,4 +1,7 @@
-var amountDisplay = ["a","b","c","d"];
+var amountDisplay = ["NOT SPECIFIED","Below 5 lakhs","Between 5 to 15 lakhs",
+                     "Between 15 to 30 lakhs",
+                     "Between 30 to 50 lakhs",
+                     "Above 50 lakhs"];
 
 
 
@@ -82,7 +85,7 @@ function AppendList(data) {
                         </div>
                         <div class="extra">
                             <button onclick="approach(this.id)" class="ui button secondary" id="Approach${index}">Approach</button>
-                            <div class="ui label">Amount Investor can fund (dynamic) ${value['AmountToInvest']}  
+                            <div class="ui label">Worth: ${amountDisplay[value['AmountToInvest']]}  
     </div>
                         </div>
                     </div>
