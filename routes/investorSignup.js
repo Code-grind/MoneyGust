@@ -64,7 +64,8 @@ router.post('/',function (req,res) {
     }
     // when no error occurs
     else {
-        res.send("Your account has been created.Login to use your account.")
+        res.render('error');
+        //res.send("Your account has been created.Login to use your account.")
     }
 
 
