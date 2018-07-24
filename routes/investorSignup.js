@@ -2,11 +2,11 @@ let express = require('express');
 let router = express.Router();
 let Schema = require('../database/schema');
 const nodemailer = require('nodemailer');
-var bcrypt = require('bcrypt');
+let bcrypt = require('bcrypt');
+require('dotenv/config');
 const saltRounds = 10;
 
 router.post('/',function (req,res) {
-    console.log(req.body.FullName);
     let investorSchema = Schema.investor({
         NoActiveMember: req.body.NoActiveMember,
         FullName: req.body.FullName,
@@ -63,13 +63,12 @@ router.post('/',function (req,res) {
     }
 
 
-
     let transporter = nodemailer.createTransport({
         service:"Gmail",
         secure: false, // true for 465, false for other ports
         auth: {
-            user: "MoneyGust101@gmail.com", // generated ethereal user
-            pass: "MoneyGust@123" // generated ethereal password
+            user: process.env.MAILUSER,     // generated ethereal user
+            pass: process.env.MAILPASSWORD  // generated ethereal password
         }
     });
 

@@ -3,10 +3,10 @@ let router = express.Router();
 let Schema = require('../database/schema');
 const nodemailer = require('nodemailer');
 let bcrypt = require('bcrypt');
+require('dotenv/config');
 const saltRounds = 10;
 
 router.post('/',function (req,res) {
-    console.log(req.body);
     let startupSchema = Schema.startup({
         // Founder Information
         NoCofounder: req.body.NoCofounder,
@@ -67,8 +67,8 @@ router.post('/',function (req,res) {
         service:"Gmail",
         secure: false, // true for 465, false for other ports
         auth: {
-            user: "MoneyGust101@gmail.com", // generated ethereal user
-            pass: "MoneyGust@123"           // generated ethereal password
+            user: process.env.MAILUSER, // generated ethereal user
+            pass: process.env.MAILPASSWORD           // generated ethereal password
         }
     });
 
@@ -97,7 +97,6 @@ router.post('/',function (req,res) {
     startupSchema.save(function (err,data) {
         if(err) throw err;
     });
-    res.send("done");
 });
 
 module.exports = router;
