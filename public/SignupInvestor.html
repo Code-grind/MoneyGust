@@ -12,9 +12,7 @@
 <div class="ui container">
     <!-- STEP PROGRESS -->
     <br>
-    <div id="asd">
-        <h1 class="ui header centered">Step 1 of 3</h1>
-    </div>
+
     <h2 class="ui header centered">Let's get started</h2>
     <form class="ui form" method="POST" action="http://localhost:3000/investorSignup">
         <h3>Investor Information</h3>
@@ -42,11 +40,24 @@
             <div class="inline fields">
 
                 <div class="seven wide required field">
-                    <label>Enter your Name</label>
+                    <label>Enter your First Name</label>
                 </div>
                 <div class="four wide required field">
-                    <input type="text" name="FullName" placeholder="Full Name" required >
+                    <input type="text" name="FirstName" placeholder="First Name" required >
                 </div>
+
+
+            </div>
+
+            <div class="inline fields">
+
+                <div class="seven wide required field">
+                    <label>Enter your Last Name</label>
+                </div>
+                <div class="four wide required field">
+                    <input type="text" name="LastName" placeholder="Last Name" required >
+                </div>
+
 
             </div>
 

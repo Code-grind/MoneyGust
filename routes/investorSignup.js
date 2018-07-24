@@ -6,10 +6,10 @@ var bcrypt = require('bcrypt');
 const saltRounds = 10;
 
 router.post('/',function (req,res) {
-    console.log(req.body.FullName);
+    console.log(req.body);
     let investorSchema = Schema.investor({
         NoActiveMember: req.body.NoActiveMember,
-        FullName: req.body.FullName,
+        FullName: req.body.FirstName + ' ' + req.body.LastName,
         Email: req.body.Email,
         LinkedInUrl: req.body.LinkedInUrl,
 
@@ -28,16 +28,20 @@ router.post('/',function (req,res) {
         Password: bcrypt.hashSync(req.body.Password,saltRounds),
         Type: "Investor"
     });
-
+    console.log(req.body.FullName);
 
     // letiables used in validation
     let Linkedinurl = req.body.LinkedInUrl;
     let Companyurl = req.body.CompanyWebsite;
-    let fname = req.body.FullName;
+    let Firstname = req.body.FirstName;
+    let Lastname = req.body.LastName;
     // IMPLEMENTING VALIDATION FOR INVESTOR
 
-    req.checkBody('FullName','Your Fullname entered contains other values than alphabets.')
+    req.checkBody('FirstName','Your Firstname entered contains other values than alphabets.')
         .isAlpha();
+    req.checkBody('LastName','Your Lastname entered contains other values than alphabets.')
+        .isAlpha();
+
     req.checkBody('Password', 'password must be at least 5 chars long ')
         .isLength({ min: 5 });
     req.checkBody('Password','password and Confirm password must be same ')

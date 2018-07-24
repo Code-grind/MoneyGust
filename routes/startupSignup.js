@@ -10,7 +10,7 @@ router.post('/',function (req,res) {
     let startupSchema = Schema.startup({
         // Founder Information
         NoCofounder: req.body.NoCofounder,
-        FullName: req.body.FullName,
+        FullName: req.body.FirstName + ' ' + req.body.LastName,
         Email: req.body.Email,
         LinkedInUrl: req.body.LinkedInUrl,
 
@@ -36,11 +36,12 @@ router.post('/',function (req,res) {
     // variables used in validation
     let Linkedinurl = req.body.LinkedInUrl;
     let Companyurl = req.body.CompanyWebsite;
-    let fullname = req.body.FullName;
+    let Firstname = req.body.FirstName;
+    let Lastname = req.body.LastName;
+    // IMPLEMENTING VALIDATION FOR STARTUP
 
-    // IMPLEMENTING VALIDATION FOR INVESTOR
-
-    req.checkBody('FullName','Fullname entered is incorrect.').isAlpha();
+    req.checkBody('FirstName','Firstname entered is incorrect.').isAlpha();
+    req.checkBody('LastName','Lastname entered is incorrect.').isAlpha();
 
     req.checkBody('Password', 'password must be at least 5 chars long ').isLength({ min: 5 });
 
