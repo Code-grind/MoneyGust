@@ -79,7 +79,8 @@ app.use('/success', function(req, res){
 app.use(function(req, res, next) {
   let err = new Error('Not Found');
   err.status = 404;
-  res.render('404 Not found');
+  res.send('ERROR');
+  //res.render('404 Not found');
 });
 
 // error handler
@@ -90,8 +91,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.send('ERROR');
-  //res.render('error');
+  res.render('error');
 });
 
 module.exports = app;
