@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
+require('dotenv/config');
 ///const databaseName = 'moneygustdb';
 ///const url = 'mongodb://localhost/'+databaseName;
 ///mLab Database
-const url = 'mongodb://Admin:MoneyGust1@ds147411.mlab.com:47411/moneygustdb';
+const url = process.env.MONGOURI;
 
 function connect() {
     mongoose.connect(url,{ useNewUrlParser: true })
