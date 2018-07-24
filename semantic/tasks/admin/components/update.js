@@ -4,7 +4,7 @@
 
 /*
 
- This task update all SUI individual distribution repos with new versions of distributions
+ This task update all SUI individual component repos with new versions of components
 
   * Commits changes from create repo
   * Pushes changes to GitHub
@@ -42,7 +42,7 @@ module.exports = function(callback) {
 
   var
     index = -1,
-    total = release.distributions.length,
+    total = release.components.length,
     timer,
     stream,
     stepRepo
@@ -53,7 +53,7 @@ module.exports = function(callback) {
     return;
   }
 
-  // Do Git commands synchronously per distribution, to avoid issues
+  // Do Git commands synchronously per component, to avoid issues
   stepRepo = function() {
 
     index = index + 1;
@@ -63,22 +63,26 @@ module.exports = function(callback) {
     }
 
     var
-      distribution         = release.distributions[index],
-      outputDirectory      = path.resolve(path.join(release.outputRoot, distribution.toLowerCase() )),
-      repoName             = release.distRepoRoot + distribution,
+      component            = release.components[index],
+      outputDirectory      = path.resolve(path.join(release.outputRoot, component)),
+      capitalizedComponent = component.charAt(0).toUpperCase() + component.slice(1),
+      repoName             = release.componentRepoRoot + capitalizedComponent,
+
+      gitURL               = 'https://github.com/' + release.org + '/' + repoName + '.git',
+      repoURL              = 'https://github.com/' + release.org + '/' + repoName + '/',
 
       commitArgs = (oAuth.name !== undefined && oAuth.email !== undefined)
         ? '--author "' + oAuth.name + ' <' + oAuth.email + '>"'
         : '',
 
-      distributionPackage = fs.existsSync(outputDirectory + 'package.json' )
+      componentPackage = fs.existsSync(outputDirectory + 'package.json' )
         ? require(outputDirectory + 'package.json')
         : false,
 
-      isNewVersion  = (version && distributionPackage.version != version),
+      isNewVersion  = (version && componentPackage.version != version),
 
       commitMessage = (isNewVersion)
-        ? 'Updated distribution to version ' + version
+        ? 'Updated component to version ' + version
         : 'Updated files from main repo',
 
       gitOptions      = { cwd: outputDirectory },
@@ -107,10 +111,11 @@ module.exports = function(callback) {
       });
     }
 
+
     // standard path
     function commitFiles() {
       // commit files
-      console.info('Committing ' + distribution + ' files', commitArgs);
+      console.info('Committing ' + component + ' files', commitArgs);
       gulp.src('./', gitOptions)
         .pipe(git.add(gitOptions))
         .pipe(git.commit(commitMessage, commitOptions))
@@ -131,7 +136,7 @@ module.exports = function(callback) {
 
     // push changes to remote
     function pushFiles() {
-      console.info('Pushing files for ' + distribution);
+      console.info('Pushing files for ' + component);
       git.push('origin', 'master', { args: '', cwd: outputDirectory }, function(error) {
         console.info('Push completed successfully');
         getSHA();
@@ -161,7 +166,7 @@ module.exports = function(callback) {
       console.log('Sleeping for 1 second...');
       // avoid rate throttling
       global.clearTimeout(timer);
-      timer = global.setTimeout(stepRepo, 500);
+      timer = global.setTimeout(stepRepo, 100);
     }
 
 
@@ -169,7 +174,7 @@ module.exports = function(callback) {
       setConfig();
     }
     else {
-      console.error('Repository must be setup before running update distributions');
+      console.error('Repository must be setup before running update components');
     }
 
   };

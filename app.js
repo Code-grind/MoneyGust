@@ -23,6 +23,7 @@ let notifications = require('./routes/notification');
 let StartupDashboard = require('./routes/StartupDashboard');
 let InvestorDashboard = require('./routes/InvestorDashboard');
 let StartupProfile = require('./routes/StartupProfile');
+let InvestorProfile = require('./routes/InvestorProfile');
 
 let app = express();
 
@@ -42,7 +43,7 @@ app.use(session({secret: 'dog is here',resave: false,saveUninitialized: false,
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'sementic')));
+app.use(express.static(path.join(__dirname, 'semantic')));
 app.use(express.static(path.join(__dirname, 'node_modules/@glidejs/glide/dist')));
 if (app.get('env') === 'development') {
     app.locals.pretty = true;
@@ -59,6 +60,10 @@ app.use('/StartupDashboard',StartupDashboard);
 app.use('/InvestorDashboard',InvestorDashboard);
 app.use('/notification',notifications);
 app.use('/StartupProfile',StartupProfile);
+app.use('/InvestorProfile',InvestorProfile);
+app.use('/UnderConstruction', ()=> {
+    res.render('Under Construction', { title: 'Under Construction'});
+});
 
 app.get('/logout', function(req, res){
     req.logout();

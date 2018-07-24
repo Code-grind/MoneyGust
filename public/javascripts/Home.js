@@ -49,6 +49,16 @@ $(document).ready(function() {
 function loggedIn() {
     $('.logout').hide();
     $('.login').show();
+    $('.masthead')
+        .visibility({
+            once: false,
+            onBottomPassed: function () {
+                $('.fixed.menu').transition('fade in');
+            },
+            onBottomPassedReverse: function () {
+                $('.fixed.menu').transition('fade out');
+            }
+        })
 }
 function loggedOut() {
     $('.logout').show();
@@ -73,14 +83,14 @@ let dashboard = $('.abcde');
 function addDashboard(data) {
     let temp = '';
     if(data['Type']==='Investor'){
-        temp = `<a class="item" href="InvestorProfile.html">Your Profile</a>
-                <a class="item" href="InvestorDashboard.html">Dashboard</a>
+        temp = `<a class="item" href="/InvestorProfile">Your Profile</a>
+                <a class="item" href="/InvestorDashboard">Dashboard</a>
                 <a class="item">History</a>
                 <a class="item">Settings</a>
                 <a class="item" href="/logout">Signed Out</a>`
     }
     else {
-        temp = `<a class="item" href="StartupProfile.html">Your Profile</a>
+        temp = `<a class="item" href="/StartupProfile">Your Profile</a>
                 <a class="item" href="/StartupDashboard">Dashboard</a>
                 <a class="item">History</a>
                 <a class="item">Settings</a>
