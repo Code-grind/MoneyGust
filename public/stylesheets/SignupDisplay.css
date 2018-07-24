@@ -1,0 +1,33 @@
+@font-face {
+    font-family: 'Icons';
+    src: url("https://semantic-ui.com/dist/themes/default/assets/fonts/icons.eot");
+    src: url("https://semantic-ui.com/dist/themes/default/assets/fonts/icons.eot?#iefix") format('embedded-opentype'), url("https://semantic-ui.com/dist/themes/default/assets/fonts/icons.woff2") format('woff2'), url("https://semantic-ui.com/dist/themes/default/assets/fonts/icons.woff") format('woff'), url("https://semantic-ui.com/dist/themes/default/assets/fonts/icons.ttf") format('truetype'), url("https://semantic-ui.com/dist/themes/default/assets/fonts/icons.svg#icons") format('svg');
+}
+
+.hidden.menu {
+    display: none;
+}
+
+.footer.segment {
+    padding: 3em 0em;
+}
+
+@media only screen and (max-width: 768px) {
+    .ui.fixed.menu {
+        display: none !important;
+    }
+}
+#fixedmenu{
+    background-color: white;
+}
+
+.ui.segment{
+    border: none !important;
+}
+
+.white-cover{
+    background-color: white !important;
+}
+.ui.grid > .row{
+    padding-bottom: 0 !important;
+}

@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/out/semantic.css">
     <link href="stylesheets/home.css" rel="stylesheet" type="text/css">
     <!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
-    <link rel = "stylesheet" href = "stylesheets/home.css">
+    <link rel = "stylesheet" href = "stylesheets/SignupDisplay.css">
     <title>MoneyGust</title>
     <style type="text/css">
         .tempr {
@@ -50,7 +50,7 @@
                 </div>
             </div>
         </a>
-        <div class="right menu">
+        <div class="right item">
             <div class="item">
                 <a class="ui inverted secondary popuplogin button">Log in</a>
             </div>
@@ -81,38 +81,49 @@
     </a>
 </div>
 
-
-<div class="ui grid center aligned">
-    <div class="row">
-        <div class="sixteen wide tablet eight wide computer column center aligned midhead tempr">
-            <div class="">
-                <h1 class="ui inverted header">I AM A STARTUP</h1>
-                <h2>Get funding for your Startup from Top Investors</h2>
-                <h3>Find Strategic Investors, Manage your Fundraising and Close Deals on MoneyGust.</h3>
-                <br><a href="SignupStartup.html" class="ui right labeled blue icon button">
-                    <i class="right arrow icon"></i>Signup
+<div class="pusher">
+    <div class="ui center aligned vertical segment">
+        <div class="ui container">
+            <div class="ui large secondary menu">
+                <a class="toc item">
+                    <i class="sidebar icon"></i>
                 </a>
+                <div class="right item">
+                    <button class="ui secondary button popuplogin logout">Log in</button>
+                </div>
             </div>
         </div>
-        <div class="sixteen wide tablet eight wide computer column center aligned midhead tempr1">
-            <h1 class="ui inverted header">
-                I AM AN INVESTOR
-            </h1>
-            <h2>
-                Invest in world's most promising Startups
-            </h2>
-            <h3>
-              Diversify your investment portfolio with unparalleled access to highly curated and personalized deal flow from India and beyond.
-            </h3>
-            <a href="SignupInvestor.html" class="ui right labeled blue icon button" >
-
-                <i class="right arrow icon"></i>
-                Signup
-            </a>
+        <div class="ui grid center aligned">
+            <div class="row">
+                <div class="sixteen wide tablet eight wide computer column center aligned midhead tempr">
+                    <div class="">
+                        <h1 class="ui inverted header">I AM A STARTUP</h1>
+                        <h2>Get funding for your Startup from Top Investors</h2>
+                        <h3>Find Strategic Investors, Manage your Fundraising and Close Deals on MoneyGust.</h3>
+                        <br><a href="SignupStartup.html" class="ui right labeled blue icon button">
+                            <i class="right arrow icon"></i>Signup
+                        </a>
+                    </div>
+                </div>
+                <div class="sixteen wide tablet eight wide computer column center aligned midhead tempr1">
+                    <h1 class="ui inverted header">
+                        I AM AN INVESTOR
+                    </h1>
+                    <h2>
+                        Invest in world's most promising Startups
+                    </h2>
+                    <h3>
+                      Diversify your investment portfolio with unparalleled access to highly curated and personalized deal flow from India and beyond.
+                    </h3>
+                    <a href="SignupInvestor.html" class="ui right labeled blue icon button" >
+                        <i class="right arrow icon"></i>
+                        Signup
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-<div class="ui inverted vertical footer segment ">
+    <div class="ui inverted vertical footer segment ">
         <div class="ui container">
             <div class="ui stackable inverted divided equal height stackable grid">
                 <div class="three wide column">
@@ -140,36 +151,37 @@
             </div>
         </div>
     </div>
-<div class="ui mini modal hidden" style="width: 455px;height: 340px;opacity: 0.7">
-    <i class="close icon"></i>
-    <div class="ui middle aligned center aligned grid">
-        <div class="thirteen wide column" style="padding: 40px 8px 30px 8px">
-            <div class="content" style="padding-left: 20px">
-                <img class="ui centered medium image" src="images/logomoneygustX.png">
-            </div>
-            <form class="ui form" method="post" id="Login-form" action="/login">
-                <div class="ui segment">
-                    <div class="field">
-                        <div class="ui left icon input">
-                            <i class="user icon"></i>
-                            <input type="text" name="Email" id="Emailfield" placeholder="E-mail address">
-                        </div>
-                    </div>
-                    <div class="field">
-                        <div class="ui left icon input">
-                            <i class="lock icon"></i>
-                            <input type="Password" name="Password" id="passwordField" placeholder="Password">
-                        </div>
-                    </div>
-                    <button class="ui linkedin fluid large submit button" id="submit" form="Login-form">Sign in</button>
+    <div class="ui mini modal hidden" style="width: 455px;height: 340px;opacity: 0.7">
+        <i class="close icon"></i>
+        <div class="ui middle aligned center aligned grid">
+            <div class="thirteen wide column" style="padding: 40px 8px 30px 8px">
+                <div class="content" style="padding-left: 20px">
+                    <img class="ui centered medium image" src="images/logomoneygustX.png">
                 </div>
-                <div class="ui error message"></div>
-            </form>
-            <div class="ui text">
-                <a href="">Forgot password?</a>
-            </div>
-            <div class="ui">
-                Not a member?<a href="">Join now</a>
+                <form class="ui form" method="post" id="Login-form" action="/login">
+                    <div class="ui segment">
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="user icon"></i>
+                                <input type="text" name="Email" id="Emailfield" placeholder="E-mail address">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="lock icon"></i>
+                                <input type="Password" name="Password" id="passwordField" placeholder="Password">
+                            </div>
+                        </div>
+                        <button class="ui linkedin fluid large submit button" id="submit" form="Login-form">Sign in</button>
+                    </div>
+                    <div class="ui error message"></div>
+                </form>
+                <div class="ui text">
+                    <a href="">Forgot password?</a>
+                </div>
+                <div class="ui">
+                    Not a member?<a href="">Join now</a>
+                </div>
             </div>
         </div>
     </div>
