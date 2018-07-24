@@ -20,7 +20,7 @@ $(document).ready(function() {
     });
     $(function () {
         $.ajax({
-            url: "http://localhost:3000/startupList",
+            url: "/startupList",
             type: "GET",
         }).done(function (json) {
             console.log(json);
@@ -33,7 +33,7 @@ $(document).ready(function() {
         $(GetNotification);
     $(function (){
         $.ajax({
-            url: "http://localhost:3000/notification/UnreadMessages",
+            url: "/notification/UnreadMessages",
             type: "GET"
         }).done(function (count) {
             console.log(count);
@@ -277,7 +277,7 @@ $(document).ready(menu.ready);
 
 function GetNotification() {
     $.ajax({
-        url: "http://localhost:3000/InvestorDashboard/GetNotification",
+        url: "/InvestorDashboard/GetNotification",
         type: "GET"
     }).done(function (notifications) {
         console.log(notifications);
