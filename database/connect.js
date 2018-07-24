@@ -3,7 +3,7 @@ require('dotenv/config');
 ///const databaseName = 'moneygustdb';
 ///const url = 'mongodb://localhost/'+databaseName;
 ///mLab Database
-const url = process.env.MONGOURI;
+const url = process.env.MONGOURL;
 
 function connect() {
     mongoose.connect(url,{ useNewUrlParser: true })
