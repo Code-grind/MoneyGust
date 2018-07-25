@@ -33,14 +33,18 @@ $(document).ready(function() {
     ;
     $('.mini.modal')
             .modal('attach events','.popuplogin','show');
-
     new Glide('.glide',{
         type: 'carousel',
         autoplay: 2000,
         hoverpause: true,
         startAt: 0,
         perView: 3,
-        gap: 10,
+        breakpoints: {
+            768: {
+                perView: 2
+            }
+        },
+        gap: 5,
         animationTimingFunc: 'cubic-bezier(0.680, -0.550, 0.265, 1.550)',
         animationDuration: 800
     }).mount();
