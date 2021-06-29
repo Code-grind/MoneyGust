@@ -1,6 +1,9 @@
 # MoneyGust
 MoneyGust is a web-based platform that gives early stage companies(startups) and entrepreneurs first-hand discovery, experience and interaction with established corporates and organisations.
 
+## DEMO - LINK
+https://moneygust.herokuapp.com/Home.html
+
 ### Requirements
 - Mongodb Community Server (4.0.0)
 
